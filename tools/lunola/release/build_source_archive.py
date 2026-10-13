@@ -11,6 +11,7 @@ def main():
  try:
   with tarfile.open(fileobj=process.stdout,mode='r|') as tar,zipfile.ZipFile(out,'x',compression=zipfile.ZIP_DEFLATED,compresslevel=6,allowZip64=True) as z:
    for member in tar:
+    if member.isdir() and member.name==prefix.rstrip('/'):continue
     assert member.name.startswith(prefix) and '..' not in Path(member.name).parts
     if member.isdir():continue
     info=zipfile.ZipInfo(member.name);info.compress_type=zipfile.ZIP_DEFLATED;info.external_attr=((member.mode| (0o120000 if member.issym() else 0o100000))<<16);info.create_system=3

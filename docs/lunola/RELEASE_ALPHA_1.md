@@ -2,7 +2,7 @@
 
 **by Pujo Setyo · Windows x64 · unsigned prerelease**
 
-Release tag: `v5.4.0-alpha.1`. Engine and runtime source commit: `d373d95263ee1824ac864ab9f0478274754c0b4a`. The release tag includes later installer artwork, packaging recipes, documentation and release metadata; the executable was not rebuilt from that later documentation commit.
+Release tag: `v5.4.0-alpha.1`. The downloadable Source ZIP also includes the subsequent source-archive helper fix; its exact snapshot commit is recorded in RELEASE_MANIFEST.json. Native application/runtime sources are unchanged between these snapshots. Engine and runtime source commit: `d373d95263ee1824ac864ab9f0478274754c0b4a`. The release tag includes later installer artwork, packaging recipes, documentation and release metadata; the executable was not rebuilt from that later documentation commit.
 
 ## Downloads and installation
 

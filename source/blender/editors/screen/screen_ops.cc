@@ -6299,7 +6299,7 @@ static void ed_screens_statusbar_menu_create(ui::Layout &layout, void * /*arg*/)
   }
   layout.prop(
       &ptr, "show_extensions_updates", UI_ITEM_NONE, IFACE_("Extensions Updates"), ICON_NONE);
-  layout.prop(&ptr, "show_statusbar_version", UI_ITEM_NONE, IFACE_("Blender Version"), ICON_NONE);
+  layout.prop(&ptr, "show_statusbar_version", UI_ITEM_NONE, IFACE_("Lunola Forma Version"), ICON_NONE);
 }
 
 static wmOperatorStatus screen_context_menu_invoke(bContext *C,
@@ -7473,7 +7473,7 @@ static wmOperatorStatus drivers_editor_show_exec(bContext *C, wmOperator *op)
   ui::Button *but = ui::context_active_but_prop_get(C, &ptr, &prop, &index);
 
   /* changes context! */
-  if (WM_window_open_temp(C, IFACE_("Blender Drivers Editor"), SPACE_GRAPH, false)) {
+  if (WM_window_open_temp(C, IFACE_("Lunola Forma Drivers Editor"), SPACE_GRAPH, false)) {
     ED_drivers_editor_init(C, CTX_wm_area(C));
 
     /* activate driver F-Curve for the property under the cursor */
@@ -7530,7 +7530,7 @@ static void SCREEN_OT_drivers_editor_show(wmOperatorType *ot)
 static wmOperatorStatus info_log_show_exec(bContext *C, wmOperator *op)
 {
   /* changes context! */
-  if (WM_window_open_temp(C, IFACE_("Blender Info Log"), SPACE_INFO, false)) {
+  if (WM_window_open_temp(C, IFACE_("Lunola Forma Info Log"), SPACE_INFO, false)) {
     return OPERATOR_FINISHED;
   }
   BKE_report(op->reports, RPT_ERROR, "Failed to open window!");

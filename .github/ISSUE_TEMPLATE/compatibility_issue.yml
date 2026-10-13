@@ -1,0 +1,82 @@
+name: Compatibility Issue
+description: Report project, add-on, format, device or platform compatibility.
+title: '[Compatibility]: '
+body:
+- type: markdown
+  attributes:
+    value: Report Lunola Forma behavior for your actual build. The engine base is 5.4.0 Alpha; no public
+      binary release is available yet. Read the [privacy/reporting guide](https://github.com/pujosety/Lunola-Forma/blob/main/docs/lunola/ISSUE_REPORTING.md).
+      This is a public issue. Logs and attachments are optional, manually supplied, and never collected
+      or uploaded automatically. Remove secrets, personal paths and private assets before posting. Security
+      concerns belong in SECURITY.md, not public issues.
+- type: textarea
+  id: version
+  attributes:
+    label: Lunola Forma version and build
+    description: 'Copy the actual About or --version output, including engine version (current base: 5.4.0
+      Alpha) and build/commit identifier if available. Say Unknown if unavailable. Do not invent a release
+      number.'
+  validations:
+    required: true
+- type: input
+  id: os
+  attributes:
+    label: Operating system
+    description: OS version and architecture; omit account names and machine identifiers.
+  validations:
+    required: true
+- type: textarea
+  id: gpu_driver
+  attributes:
+    label: GPU, driver and backend
+    description: GPU model, driver version, and graphics/render backend when relevant. Use Unknown or
+      Not applicable rather than guessing.
+  validations:
+    required: true
+- type: textarea
+  id: summary
+  attributes:
+    label: Affected component
+    description: Identify project/file format, add-on and version, hardware/backend or platform. Do not
+      share private project names.
+  validations:
+    required: true
+- type: textarea
+  id: reproduction
+  attributes:
+    label: Steps to reproduce
+    description: Give minimal reproduction, source format/version, relevant settings, and comparison build
+      only if actually tested.
+  validations:
+    required: true
+- type: textarea
+  id: expected
+  attributes:
+    label: Expected compatibility
+    description: What workflow should work? Mark untested assumptions explicitly.
+  validations:
+    required: true
+- type: textarea
+  id: actual
+  attributes:
+    label: Actual behavior
+    description: Describe errors, differences or failure. The alpha base and smoke suite do not guarantee
+      every add-on or older-version compatibility.
+  validations:
+    required: true
+- type: textarea
+  id: logs
+  attributes:
+    label: Optional reviewed logs / evidence
+    description: 'Optional: paste a short manually reviewed, redacted excerpt. Attachments are optional.
+      Remove credentials, personal paths, private content and packed assets. You may leave this empty.'
+  validations:
+    required: false
+- type: checkboxes
+  id: privacy
+  attributes:
+    label: Public-report privacy check
+    options:
+    - label: I reviewed the text and any optional attachments for secrets, personal information and private
+        assets. I understand this is a public report and no local data is collected automatically.
+      required: true

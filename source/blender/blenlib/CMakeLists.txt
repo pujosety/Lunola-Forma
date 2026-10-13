@@ -285,6 +285,7 @@ set(SRC
   BLI_listbase.hh
   BLI_listbase_iterator.hh
   BLI_listbase_wrapper.hh
+  BLI_lunola_identity.hh
   BLI_map.hh
   BLI_map_slots.hh
   BLI_math_angle_types.hh

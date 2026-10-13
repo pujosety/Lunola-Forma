@@ -5,6 +5,10 @@
 from __future__ import annotations
 
 import bpy
+from _lunola_urls import (
+    LUNOLA_PROJECT_URL, LUNOLA_DOCS_URL, LUNOLA_BUG_REPORT_URL,
+    LUNOLA_RELEASE_NOTES_URL, LUNOLA_LICENSES_URL,
+)
 from bpy.types import (
     Menu,
     Operator,
@@ -1107,12 +1111,12 @@ class WM_OT_url_open_preset(Operator):
 
     @staticmethod
     def _url_from_bug():
-        from _bpy_internal.system_info.url_prefill_runtime import url_from_blender
-        return url_from_blender()
+        # Open an empty issue form: users review and enter diagnostic data themselves.
+        return LUNOLA_BUG_REPORT_URL
 
     @staticmethod
     def _url_from_release_notes():
-        return "https://www.blender.org/download/releases/{:d}-{:d}/".format(*bpy.app.version[:2])
+        return LUNOLA_RELEASE_NOTES_URL
 
     @staticmethod
     def _url_from_manual():
@@ -1129,10 +1133,10 @@ class WM_OT_url_open_preset(Operator):
     preset_items = [
         # Dynamic URL's.
         (('BUG', iface_("Bug"),
-          tip_("Report a bug with pre-filled version information")),
+          tip_("Report a Lunola Forma issue; review diagnostic details before submitting")),
          _url_from_bug),
         (('RELEASE_NOTES', iface_("Release Notes"),
-          tip_("Read about what's new in this version of Blender")),
+          tip_("Read Lunola Forma development notes; public releases are pending")),
          _url_from_release_notes),
         (('MANUAL', iface_("User Manual"),
           tip_("The reference manual for this version of Blender")),
@@ -1145,9 +1149,9 @@ class WM_OT_url_open_preset(Operator):
         (('FUND', iface_("Development Fund"),
           tip_("The donation program to support maintenance and improvements")),
          "https://fund.blender.org"),
-        (('BLENDER', "blender.org",
-          tip_("Blender's official web-site")),
-         "https://www.blender.org"),
+        (('BLENDER', iface_("Lunola Forma GitHub"),
+                  tip_("The official Lunola Forma project repository")),
+                 LUNOLA_PROJECT_URL),
         (('CREDITS', iface_("Credits"),
           tip_("Lists committers to Blender's source code")),
          "https://www.blender.org/about/credits/"),
@@ -3479,7 +3483,7 @@ class WM_MT_splash_quick_setup(Menu):
             col = split.column()
             col.operator(
                 "preferences.copy_prev",
-                text=iface_("Import Blender {:d}.{:d} Preferences", "Operator").format(*old_version),
+                text=iface_("Import Previous {:d}.{:d} Preferences (Blender-compatible)", "Operator").format(*old_version),
                 icon='NONE',
                 translate=False,
             )
@@ -3505,8 +3509,8 @@ class WM_MT_splash_quick_setup(Menu):
         # Themes.
         sub = col.column(heading="Theme")
         label = bpy.types.USERPREF_MT_interface_theme_presets.bl_label
-        if label == "Presets":
-            label = "Blender Dark"
+        if label in {"Presets", "Blender Dark"}:
+            label = "Lunola Forma Dark"
         sub.menu("USERPREF_MT_interface_theme_presets", text=label)
 
         col.separator()
@@ -3517,8 +3521,8 @@ class WM_MT_splash_quick_setup(Menu):
 
         sub = col.column(heading="Keymap")
         text = bpy.path.display_name(kc.name)
-        if not text:
-            text = "Blender"
+        if not text or text == "Blender":
+            text = "Lunola Forma (Blender-compatible)"
         sub.menu("USERPREF_MT_keyconfigs", text=text)
 
         if hasattr(kc_prefs, "select_mouse"):
@@ -3572,7 +3576,7 @@ class WM_MT_splash(Menu):
             # Links if no recent files.
             col2_title.label(text="Getting Started")
 
-            col2.operator("wm.url_open_preset", text="Manual", icon='URL').type = 'MANUAL'
+            col2.operator("wm.url_open", text="Lunola Forma Documentation", icon='URL').url = LUNOLA_DOCS_URL
 
         col_sep = layout.column()
         col_sep.separator()
@@ -3611,7 +3615,9 @@ class WM_MT_splash_about(Menu):
 
         col = split.column(align=True)
         col.scale_y = 0.8
+        col.label(text="Professional 3D Creation Suite")
         col.label(text="by Pujo Setyo")
+        col.operator("wm.url_open", text="Official Repository", icon='URL').url = LUNOLA_PROJECT_URL
         col.label(text=iface_("Version: {:s}").format(bpy.app.version_string), translate=False)
         col.separator(factor=2.5)
         col.label(text=iface_("Date: {:s} {:s}").format(
@@ -3637,10 +3643,15 @@ class WM_MT_splash_about(Menu):
         col = split.column(align=True)
         col.emboss = 'PULLDOWN_MENU'
         # Upstream authorship belongs with legal/source information, not product promotion.
-        col.label(text="License & Source")
-        col.label(text="Upstream: Blender")
-        col.operator("wm.url_open", text="GNU GPL License & Source", icon='URL').url = "https://www.blender.org/about/license/"
+        col.label(text="Open Source Credits")
+        col.operator("wm.url_open", text="Source & Licenses", icon='URL').url = LUNOLA_LICENSES_URL
+        col.operator("wm.url_open", text="Upstream GPL Information", icon='URL').url = "https://www.blender.org/about/license/"
         col.operator("wm.url_open_preset", text="Upstream Authors", icon='URL').type = 'CREDITS'
+
+        # Attribution is full-width instead of clipped in the narrow link column.
+        credits = layout.column(align=True)
+        credits.separator()
+        credits.label(text="Based on Blender, an open-source 3D creation application.")
 
 
 class WM_MT_region_toggle_pie(Menu):

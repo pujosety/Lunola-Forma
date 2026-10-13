@@ -20,6 +20,7 @@
 #include "uri_convert.hh"
 #include "utfconv.hh"
 
+#include "BLI_lunola_identity.hh"
 #include "BLI_string.hh"
 
 #include "BLI_system.hh" /* Own include. */
@@ -479,7 +480,7 @@ void BLI_windows_exception_print_message(const void *os_info)
 /** \name bli_show_message_box
  * \{ */
 
-static std::string get_os_info()
+[[maybe_unused]] static std::string get_os_info()
 {
   OSVERSIONINFOEX osvi;
   ZeroMemory(&osvi, sizeof(OSVERSIONINFOEX));
@@ -576,7 +577,7 @@ static bool bli_executable_path_get(LPWSTR path, DWORD size)
 }
 
 /* Wrapper function for url_encode. */
-static std::wstring url_encode_wstring(const std::string &str)
+[[maybe_unused]] static std::wstring url_encode_wstring(const std::string &str)
 {
   size_t len = str.length();
 
@@ -610,14 +611,15 @@ void BLI_windows_exception_show_dialog(const char *filepath_crashlog,
 
   std::wstring full_message_16 =
       L"A problem has caused the program to stop functioning correctly. If you know the steps to "
-      L"reproduce this issue, please submit a bug report.\n"
+      L"reproduce this issue, please submit an issue report.\n"
+      L"Review and redact logs before attaching them; no diagnostics are sent automatically.\n"
       "\n"
       L"The crash log can be found at:\n" +
       std::wstring(filepath_crashlog_utf16);
 
   TASKDIALOGCONFIG config = {0};
   const TASKDIALOG_BUTTON buttons[] = {{IDRETRY, L"Restart"},
-                                       {IDOK, L"Report a Bug"},
+                                       {IDOK, L"Report an Issue"},
                                        {IDHELP, L"View Crash Log"},
                                        {IDCLOSE, L"Close"}};
 
@@ -626,8 +628,8 @@ void BLI_windows_exception_show_dialog(const char *filepath_crashlog,
   config.hInstance = 0;
   config.dwCommonButtons = 0;
   config.pszMainIcon = TD_ERROR_ICON;
-  config.pszWindowTitle = L"Blender";
-  config.pszMainInstruction = L"Blender has stopped working";
+  config.pszWindowTitle = L"Lunola Forma";
+  config.pszMainInstruction = L"Lunola Forma has stopped working";
   config.pszContent = full_message_16.c_str();
   config.pButtons = buttons;
   config.cButtons = ARRAY_SIZE(buttons);
@@ -679,18 +681,9 @@ void BLI_windows_exception_show_dialog(const char *filepath_crashlog,
             nullptr, L"open", data_ptr->filepath_crashlog_utf16, nullptr, nullptr, SW_SHOWNORMAL);
         return S_FALSE;
       case IDOK: {
-        /* Open the bug report form with pre-filled data. */
-        /* clang-format off */
-        std::wstring link =
-            L"https://redirect.blender.org/"
-            L"?type=bug_report"
-            L"&project=blender"
-            L"&os=" + url_encode_wstring(get_os_info()) +
-            L"&gpu=" + url_encode_wstring(data_ptr->gpu_name) +
-            L"&broken_version=" + url_encode_wstring(data_ptr->build_version) +
-            L"&utm_content=crash_dialog";
-        /* clang-format on */
-        ShellExecuteW(nullptr, L"open", link.c_str(), nullptr, nullptr, SW_SHOWNORMAL);
+        /* Open the product issue form without transmitting private diagnostic query data. */
+        ShellExecuteW(
+            nullptr, L"open", lunola::issue_report_url, nullptr, nullptr, SW_SHOWNORMAL);
         return S_FALSE;
       }
       default:

@@ -24,7 +24,7 @@ BEGIN
     BEGIN
       VALUE "FileVersion", BLEN_VER_RC_STR
       VALUE "ProductVersion", BLEN_VER_RC_STR
-      VALUE "CompanyName", "Blender Foundation"
+      VALUE "CompanyName", "Pujo Setyo"
       VALUE "FileDescription", "Lunola Forma"
       VALUE "LegalCopyright", "GPLv3 (Blender Foundation)"
       VALUE "OriginalFilename", "blender.exe"

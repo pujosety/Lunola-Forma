@@ -35,7 +35,7 @@ def url_from_blender() -> str:
     # if Blender isn't opening and we can't import the GPU module.
     # So just tell users to follow a written guide.
     query_params["gpu"] = (
-        "Follow our guide to collect this information:\n"
+        "Follow the upstream Blender guide to collect this information:\n"
         "https://developer.blender.org/docs/handbook/bug_reports/making_good_bug_reports/collect_system_information/"
     )
 
@@ -79,8 +79,8 @@ def url_from_blender() -> str:
 
     if not (set(values.values()) - {unknown_string}):
         # No valid Blender info could be found.
-        print("Blender did not provide any build information. Blender may be corrupt or blocked from running.")
-        print("Please try reinstalling Blender and double check your anti-virus isn't blocking it from running.")
+        print("Lunola Forma did not provide any build information. Lunola Forma may be corrupt or blocked from running.")
+        print("Please try reinstalling Lunola Forma and double check your anti-virus isn't blocking it from running.")
         return ""
 
     query_params["broken_version"] = (
@@ -94,11 +94,16 @@ def url_from_blender() -> str:
 
 def main() -> int:
     import webbrowser
+    from pathlib import Path
+    import runpy
 
-    if not (url := url_from_blender()):
-        return 1
-
-    webbrowser.open(url)
+    # Direct script execution has no scripts/modules on sys.path. Read only
+    # the shipped product URL constants, without importing bpy or probing the
+    # executable. Keep url_from_blender available for explicit upstream use.
+    urls = runpy.run_path(str(Path(__file__).resolve().parents[2] / "_lunola_urls.py"))
+    print("Opening Lunola Forma issues on GitHub (sign-in required).")
+    print("No system information is included. Review and redact any details before sharing them.")
+    webbrowser.open(urls["LUNOLA_BUG_REPORT_URL"])
     return 0
 
 

@@ -131,7 +131,7 @@ GHOST_WindowWin32::GHOST_WindowWin32(GHOST_SystemWin32 *system,
 
   if (!setDrawingContextType(type)) {
     if (type == GHOST_kDrawingContextTypeOpenGL) {
-      const char *title = "Blender - Unsupported Graphics Card Configuration";
+      const char *title = "Lunola Forma - Unsupported Graphics Card Configuration";
       const char *text = "";
 #if defined(WIN32)
       if (strncmp(blender::BLI_getenv("PROCESSOR_IDENTIFIER"), "ARM", 3) == 0 &&

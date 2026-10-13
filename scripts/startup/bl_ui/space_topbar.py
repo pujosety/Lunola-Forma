@@ -5,6 +5,11 @@
 import bpy
 import bpy.utils.previews
 from bpy.types import Header, Menu, Panel
+from _lunola_urls import (
+    LUNOLA_PROJECT_URL, LUNOLA_DOCS_URL, LUNOLA_ISSUES_URL,
+    LUNOLA_FEATURE_REQUEST_URL, LUNOLA_RELEASE_NOTES_URL,
+    LUNOLA_LICENSES_URL, LUNOLA_TUTORIALS_URL,
+)
 
 from bpy.app.translations import (
     pgettext_iface as iface_,
@@ -358,7 +363,7 @@ class TOPBAR_MT_file_defaults(Menu):
         layout.operator("wm.save_homefile")
         if app_template:
             display_name = bpy.path.display_name(iface_(app_template))
-            props = layout.operator("wm.read_factory_settings", text="Load Factory Blender Settings")
+            props = layout.operator("wm.read_factory_settings", text="Load Factory Lunola Forma Settings")
             props.app_template = app_template
             props = layout.operator(
                 "wm.read_factory_settings",
@@ -690,27 +695,31 @@ class TOPBAR_MT_help(Menu):
 
         show_developer = context.preferences.view.show_developer_ui
 
-        layout.operator("wm.url_open_preset", text="Manual", icon='URL').type = 'MANUAL'
-        layout.operator("wm.url_open", text="Support").url = "https://www.blender.org/support"
-        layout.operator("wm.url_open", text="User Communities").url = "https://www.blender.org/community/"
-        layout.operator("wm.url_open", text="Get Involved").url = "https://www.blender.org/get-involved/"
-        layout.operator("wm.url_open_preset", text="Release Notes").type = 'RELEASE_NOTES'
+        layout.operator("wm.url_open", text="Lunola Forma Documentation", icon='URL').url = LUNOLA_DOCS_URL
+        if LUNOLA_TUTORIALS_URL is not None:
+            layout.operator("wm.url_open", text="Lunola Forma Tutorials").url = LUNOLA_TUTORIALS_URL
+        layout.operator("wm.url_open", text="Report an Issue").url = LUNOLA_ISSUES_URL
+        layout.operator("wm.url_open", text="Feature Requests").url = LUNOLA_FEATURE_REQUEST_URL
+        layout.operator("wm.url_open", text="Lunola Forma GitHub").url = LUNOLA_PROJECT_URL
+        layout.operator("wm.url_open", text="Release Notes (Development; Releases Pending)").url = LUNOLA_RELEASE_NOTES_URL
+        layout.operator("wm.url_open", text="Licenses & Open Source Credits").url = LUNOLA_LICENSES_URL
+        layout.operator("wm.splash_about", text="About Lunola Forma", icon='INFO')
 
         layout.separator()
 
         if show_developer:
             layout.operator(
                 "wm.url_open",
-                text="Developer Documentation",
+                text="Upstream Developer Documentation",
                 icon='URL',
             ).url = "https://developer.blender.org/docs/"
-            layout.operator("wm.url_open", text="Developer Community").url = "https://devtalk.blender.org"
-            layout.operator("wm.url_open_preset", text="Python API Reference").type = 'API'
+            layout.operator("wm.url_open", text="Upstream Developer Community").url = "https://devtalk.blender.org"
+            layout.operator("wm.url_open_preset", text="Upstream Python API Reference").type = 'API'
             layout.operator("wm.operator_cheat_sheet", icon='TEXT')
 
         layout.separator()
 
-        layout.operator("wm.url_open_preset", text="Report a Bug", icon='URL').type = 'BUG'
+        layout.operator("wm.url_open_preset", text="Upstream Blender Manual", icon='URL').type = 'MANUAL'
         layout.operator("wm.sysinfo")
 
 

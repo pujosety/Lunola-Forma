@@ -1,0 +1,972 @@
+{
+  "changes": [
+    {
+      "file": "intern/ghost/intern/GHOST_ContextMTL.mm",
+      "line": 36,
+      "original": "alert.messageText = @\"Blender\";",
+      "replacement": "alert.messageText = @\"Lunola Forma\";",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "intern/ghost/intern/GHOST_SystemCocoa.mm",
+      "line": 588,
+      "original": "appMenu = [[NSMenu alloc] initWithTitle:@\"Blender\"];",
+      "replacement": "appMenu = [[NSMenu alloc] initWithTitle:@\"Lunola Forma\"];",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "intern/ghost/intern/GHOST_SystemCocoa.mm",
+      "line": 590,
+      "original": "[appMenu addItemWithTitle:@\"About Blender\"",
+      "replacement": "[appMenu addItemWithTitle:@\"About Lunola Forma\"",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "intern/ghost/intern/GHOST_SystemCocoa.mm",
+      "line": 595,
+      "original": "menuItem = [appMenu addItemWithTitle:@\"Hide Blender\"",
+      "replacement": "menuItem = [appMenu addItemWithTitle:@\"Hide Lunola Forma\"",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "intern/ghost/intern/GHOST_SystemCocoa.mm",
+      "line": 610,
+      "original": "menuItem = [appMenu addItemWithTitle:@\"Quit Blender\"",
+      "replacement": "menuItem = [appMenu addItemWithTitle:@\"Quit Lunola Forma\"",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "intern/ghost/intern/GHOST_SystemWin32.cc",
+      "line": 2873,
+      "original": "config.pszWindowTitle = L\"Blender\";",
+      "replacement": "config.pszWindowTitle = L\"Lunola Forma\";",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "intern/ghost/intern/GHOST_WindowWin32.cc",
+      "line": 134,
+      "original": "const char *title = \"Blender - Unsupported Graphics Card Configuration\";",
+      "replacement": "const char *title = \"Lunola Forma - Unsupported Graphics Card Configuration\";",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/blenkernel/intern/blender_cli_command.cc",
+      "line": 150,
+      "original": "std::cout << ((pass == 0) ? \"Blender Command Listing:\" :",
+      "replacement": "std::cout << ((pass == 0) ? \"Lunola Forma Command Listing:\" :",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/blenlib/intern/system_win32.cc",
+      "line": 629,
+      "original": "config.pszWindowTitle = L\"Blender\";",
+      "replacement": "config.pszWindowTitle = L\"Lunola Forma\";",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/blenlib/intern/system_win32.cc",
+      "line": 630,
+      "original": "config.pszMainInstruction = L\"Blender has stopped working\";",
+      "replacement": "config.pszMainInstruction = L\"Lunola Forma has stopped working\";",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/cpucheck/cpu_check.cc",
+      "line": 75,
+      "original": "\"Blender requires a CPU with SSE42 support.\",",
+      "replacement": "\"Lunola Forma requires a CPU with SSE42 support.\",",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/cpucheck/cpu_check.cc",
+      "line": 100,
+      "original": "printf(\"Unsupported CPU - %s\\nBlender requires a CPU with SSE42 support.\", cpu_brand_string());",
+      "replacement": "printf(\"Unsupported CPU - %s\\nLunola Forma requires a CPU with SSE42 support.\", cpu_brand_string());",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/editors/interface/eyedroppers/eyedropper_color.cc",
+      "line": 646,
+      "original": "status.item(TIP_(\"Press 'Enter' to sample outside of a Blender window\"), ICON_STATUS_INFO);",
+      "replacement": "status.item(TIP_(\"Press 'Enter' to sample outside of a Lunola Forma window\"), ICON_STATUS_INFO);",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/editors/interface/eyedroppers/eyedropper_color.cc",
+      "line": 704,
+      "original": "ot->description = \"Sample a color from the Blender window to store in a property\";",
+      "replacement": "ot->description = \"Sample a color from the Lunola Forma window to store in a property\";",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/editors/interface/eyedroppers/eyedropper_grease_pencil_color.cc",
+      "line": 457,
+      "original": "ot->description = \"Sample a color from the Blender Window and create Grease Pencil material\";",
+      "replacement": "ot->description = \"Sample a color from the Lunola Forma Window and create Grease Pencil material\";",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/editors/render/render_view.cc",
+      "line": 178,
+      "original": "IFACE_(\"Blender Render\"),",
+      "replacement": "IFACE_(\"Lunola Forma Render\"),",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/editors/screen/screen_ops.cc",
+      "line": 6302,
+      "original": "layout.prop(&ptr, \"show_statusbar_version\", UI_ITEM_NONE, IFACE_(\"Blender Version\"), ICON_NONE);",
+      "replacement": "layout.prop(&ptr, \"show_statusbar_version\", UI_ITEM_NONE, IFACE_(\"Lunola Forma Version\"), ICON_NONE);",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/editors/screen/screen_ops.cc",
+      "line": 7476,
+      "original": "if (WM_window_open_temp(C, IFACE_(\"Blender Drivers Editor\"), SPACE_GRAPH, false)) {",
+      "replacement": "if (WM_window_open_temp(C, IFACE_(\"Lunola Forma Drivers Editor\"), SPACE_GRAPH, false)) {",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/editors/screen/screen_ops.cc",
+      "line": 7533,
+      "original": "if (WM_window_open_temp(C, IFACE_(\"Blender Info Log\"), SPACE_INFO, false)) {",
+      "replacement": "if (WM_window_open_temp(C, IFACE_(\"Lunola Forma Info Log\"), SPACE_INFO, false)) {",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/editors/screen/screendump.cc",
+      "line": 264,
+      "original": "ot->description = \"Capture a picture of the whole Blender window\";",
+      "replacement": "ot->description = \"Capture a picture of the whole Lunola Forma window\";",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/editors/space_image/image_ops.cc",
+      "line": 2218,
+      "original": "\"Create a new image file without modifying the current image in Blender\");",
+      "replacement": "\"Create a new image file without modifying the current image in Lunola Forma\");",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/editors/space_info/info_ops.cc",
+      "line": 675,
+      "original": "ot->description = \"Update the display of reports in Blender UI (internal use)\";",
+      "replacement": "ot->description = \"Update the display of reports in Lunola Forma UI (internal use)\";",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/editors/space_text/text_ops.cc",
+      "line": 4252,
+      "original": "C, IFACE_(\"File Modified Outside and Inside Blender\"), ICON_NONE);",
+      "replacement": "C, IFACE_(\"File Modified Outside and Inside Lunola Forma\"), ICON_NONE);",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/editors/space_text/text_ops.cc",
+      "line": 4265,
+      "original": "C, IFACE_(\"File Modified Outside Blender\"), ICON_NONE);",
+      "replacement": "C, IFACE_(\"File Modified Outside Lunola Forma\"), ICON_NONE);",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/editors/space_text/text_ops.cc",
+      "line": 4278,
+      "original": "C, IFACE_(\"File Deleted Outside Blender\"), ICON_NONE);",
+      "replacement": "C, IFACE_(\"File Deleted Outside Lunola Forma\"), ICON_NONE);",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/editors/space_userpref/userpref_ops.cc",
+      "line": 1027,
+      "original": "MessageBox(0, msg, \"Blender\", MB_OK | MB_ICONERROR);",
+      "replacement": "MessageBox(0, msg, \"Lunola Forma\", MB_OK | MB_ICONERROR);",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_asset.cc",
+      "line": 34,
+      "original": "\"Show the assets currently available in this Blender session\"},",
+      "replacement": "\"Show the assets currently available in this Lunola Forma session\"},",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_asset.cc",
+      "line": 39,
+      "original": "\"Show basic building blocks and utilities coming with Blender\"},",
+      "replacement": "\"Show basic building blocks and utilities coming with Lunola Forma\"},",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_asset.cc",
+      "line": 727,
+      "original": "\"Identifier for the asset's catalog, used by Blender to look up the \"",
+      "replacement": "\"Identifier for the asset's catalog, used by Lunola Forma to look up the \"",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_asset.cc",
+      "line": 865,
+      "original": "\"Assets and catalogs in this library can be edited from the current Blender instance\");",
+      "replacement": "\"Assets and catalogs in this library can be edited from the current Lunola Forma instance\");",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_brush.cc",
+      "line": 2896,
+      "original": "RNA_def_property_ui_text(prop, \"Unprojected Size\", \"Diameter of brush in Blender units\");",
+      "replacement": "RNA_def_property_ui_text(prop, \"Unprojected Size\", \"Diameter of brush in scene units\");",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_constraint.cc",
+      "line": 3952,
+      "original": "\"Amount of residual error in Blender space unit for constraints that work on position\");",
+      "replacement": "\"Amount of residual error in scene space unit for constraints that work on position\");",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_dynamicpaint.cc",
+      "line": 621,
+      "original": "prop, \"Premultiply Alpha\", \"Multiply color by alpha (recommended for Blender input)\");",
+      "replacement": "prop, \"Premultiply Alpha\", \"Multiply color by alpha (recommended for Lunola Forma input)\");",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_dynamicpaint.cc",
+      "line": 881,
+      "original": "prop, \"Max Velocity\", \"Velocity considered as maximum influence (Blender units per frame)\");",
+      "replacement": "prop, \"Max Velocity\", \"Velocity considered as maximum influence (scene units per frame)\");",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_object_api.cc",
+      "line": 30,
+      "original": "{CONSTRAINT_SPACE_WORLD, \"WORLD\", 0, \"World Space\", \"The most global space in Blender\"},",
+      "replacement": "{CONSTRAINT_SPACE_WORLD, \"WORLD\", 0, \"World Space\", \"The most global space in Lunola Forma\"},",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_object_api.cc",
+      "line": 1069,
+      "original": "\"By default Blender only computes the subset of data layers needed for viewport \"",
+      "replacement": "\"By default Lunola Forma only computes the subset of data layers needed for viewport \"",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_render.cc",
+      "line": 890,
+      "original": "RNA_def_function_ui_description(func, \"Free Blender side memory of render engine\");",
+      "replacement": "RNA_def_function_ui_description(func, \"Free Lunola Forma side memory of render engine\");",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_render.cc",
+      "line": 934,
+      "original": "RNA_def_function_ui_description(func, \"The temp directory used by Blender\");",
+      "replacement": "RNA_def_function_ui_description(func, \"The temp directory used by Lunola Forma\");",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_scene.cc",
+      "line": 5047,
+      "original": "\"Scale to use when converting between Blender units and dimensions.\"",
+      "replacement": "\"Scale to use when converting between scene units and dimensions.\"",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_scene.cc",
+      "line": 9224,
+      "original": "prop, \"Export Method\", \"How to export the Blender scene to the Hydra render engine\");",
+      "replacement": "prop, \"Export Method\", \"How to export the Lunola Forma scene to the Hydra render engine\");",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_space.cc",
+      "line": 191,
+      "original": "\"Manage the current Blender project\"},",
+      "replacement": "\"Manage the current Lunola Forma project\"},",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_space.cc",
+      "line": 4531,
+      "original": "\"Blender File\",",
+      "replacement": "\".blend File\",",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_space.cc",
+      "line": 4537,
+      "original": "\"Display low level Blender data and its properties\"},",
+      "replacement": "\"Display low level Lunola Forma data and its properties\"},",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_space.cc",
+      "line": 8001,
+      "original": "prop, \"Library Browser\", \"Whether we may browse Blender files' content or not\");",
+      "replacement": "prop, \"Library Browser\", \"Whether we may browse .blend files' content or not\");",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_space.cc",
+      "line": 8064,
+      "original": "RNA_def_property_ui_text(prop, \"Filter Blender\", \"Show .blend files\");",
+      "replacement": "RNA_def_property_ui_text(prop, \"Filter Lunola Forma\", \"Show.blend files\");",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_space.cc",
+      "line": 8071,
+      "original": "prop, \"Filter Blender Backup Files\", \"Show .blend1, .blend2, etc. files\");",
+      "replacement": "prop, \"Filter .blend Backup Files\", \"Show .blend1, .blend2, etc. files\");",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_space.cc",
+      "line": 8120,
+      "original": "prop, \"Filter Blender IDs\", \"Show .blend files items (objects, materials, etc.)\");",
+      "replacement": "prop, \"Filter Data-Block IDs\", \"Show.blend files items (objects, materials, etc.)\");",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_space.cc",
+      "line": 8519,
+      "original": "RNA_def_struct_ui_text(srna, \"Space Preferences\", \"Blender preferences space data\");",
+      "replacement": "RNA_def_struct_ui_text(srna, \"Space Preferences\", \"Lunola Forma preferences space data\");",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_userdef.cc",
+      "line": 229,
+      "original": "{0, \"AUTO\", 0, \"Auto\", \"Auto detect best GPU for running Blender\"},",
+      "replacement": "{0, \"AUTO\", 0, \"Auto\", \"Auto detect best GPU for running Lunola Forma\"},",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_userdef.cc",
+      "line": 3523,
+      "original": "RNA_def_struct_ui_text(srna, \"Theme Preferences\", \"Theme settings for the Blender Preferences\");",
+      "replacement": "RNA_def_struct_ui_text(srna, \"Theme Preferences\", \"Theme settings for the Lunola Forma Preferences\");",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_userdef.cc",
+      "line": 5765,
+      "original": "RNA_def_property_ui_text(prop, \"Show Memory\", \"Show Blender memory usage\");",
+      "replacement": "RNA_def_property_ui_text(prop, \"Show Memory\", \"Show Lunola Forma memory usage\");",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_userdef.cc",
+      "line": 5776,
+      "original": "RNA_def_property_ui_text(prop, \"Show Version\", \"Show Blender version string\");",
+      "replacement": "RNA_def_property_ui_text(prop, \"Show Version\", \"Show Lunola Forma version string\");",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_userdef.cc",
+      "line": 5846,
+      "original": "RNA_def_struct_ui_text(srna, \"Edit Methods\", \"Settings for interacting with Blender data\");",
+      "replacement": "RNA_def_struct_ui_text(srna, \"Edit Methods\", \"Settings for interacting with Lunola Forma data\");",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_userdef.cc",
+      "line": 6363,
+      "original": "\"on operating system DPI settings and Blender display scale.\");",
+      "replacement": "\"on operating system DPI settings and Lunola Forma display scale.\");",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_userdef.cc",
+      "line": 6372,
+      "original": "\"user interface elements, based on operating system settings and Blender UI scale\");",
+      "replacement": "\"user interface elements, based on operating system settings and Lunola Forma UI scale\");",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_userdef.cc",
+      "line": 6573,
+      "original": "\"GPU backend to use (requires restarting Blender for changes to take effect)\");",
+      "replacement": "\"GPU backend to use (requires restarting Lunola Forma for changes to take effect)\");",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_userdef.cc",
+      "line": 6585,
+      "original": "\"Blender for changes to take effect)\");",
+      "replacement": "\"Lunola Forma for changes to take effect)\");",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_userdef.cc",
+      "line": 6593,
+      "original": "\"(requires restarting Blender for changes to take effect). \"",
+      "replacement": "\"(requires restarting Lunola Forma for changes to take effect). \"",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_userdef.cc",
+      "line": 6615,
+      "original": "\"Requires restarting Blender for changes to take effect. \"",
+      "replacement": "\"Requires restarting Lunola Forma for changes to take effect. \"",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_userdef.cc",
+      "line": 6625,
+      "original": "\"Allow Blender to access the internet. Add-ons that follow this \"",
+      "replacement": "\"Allow Lunola Forma to access the internet. Add-ons that follow this \"",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_userdef.cc",
+      "line": 6627,
+      "original": "\"Blender cannot prevent third-party add-ons from violating this rule.\");",
+      "replacement": "\"Lunola Forma cannot prevent third-party add-ons from violating this rule.\");",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_userdef.cc",
+      "line": 6701,
+      "original": "\"Make this Blender version open blend files for all users. Requires elevated privileges.\");",
+      "replacement": "\"Make this Lunola Forma version open blend files for all users. Requires elevated privileges.\");",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_userdef.cc",
+      "line": 6967,
+      "original": "prop, \"Max Threshold\", \"Raw input pressure value that is interpreted as 100% by Blender\");",
+      "replacement": "prop, \"Max Threshold\", \"Raw input pressure value that is interpreted as 100% by Lunola Forma\");",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_userdef.cc",
+      "line": 6980,
+      "original": "\"restarting Blender for changes to take effect)\");",
+      "replacement": "\"restarting Lunola Forma for changes to take effect)\");",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_userdef.cc",
+      "line": 7434,
+      "original": "prop, \"Check for Updates on Startup\", \"Allow Blender to check for updates upon launch\");",
+      "replacement": "prop, \"Check for Updates on Startup\", \"Allow Lunola Forma to check for updates upon launch\");",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/makesrna/intern/rna_userdef.cc",
+      "line": 8247,
+      "original": "RNA_def_property_ui_text(prop, \"Edit Methods\", \"Settings for interacting with Blender data\");",
+      "replacement": "RNA_def_property_ui_text(prop, \"Edit Methods\", \"Settings for interacting with Lunola Forma data\");",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/nodes/geometry/node_geometry_util.cc",
+      "line": 114,
+      "original": "TIP_(\"Disabled, Blender was compiled without OpenVDB\"));",
+      "replacement": "TIP_(\"Disabled, Lunola Forma was compiled without OpenVDB\"));",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/nodes/geometry/nodes/node_geo_convex_hull.cc",
+      "line": 280,
+      "original": "TIP_(\"Disabled, Blender was compiled without Bullet\"));",
+      "replacement": "TIP_(\"Disabled, Lunola Forma was compiled without Bullet\"));",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/nodes/geometry/nodes/node_geo_import_obj.cc",
+      "line": 88,
+      "original": "TIP_(\"Disabled, Blender was compiled without OBJ I/O\"));",
+      "replacement": "TIP_(\"Disabled, Lunola Forma was compiled without OBJ I/O\"));",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/nodes/geometry/nodes/node_geo_import_ply.cc",
+      "line": 80,
+      "original": "TIP_(\"Disabled, Blender was compiled without PLY I/O\"));",
+      "replacement": "TIP_(\"Disabled, Lunola Forma was compiled without PLY I/O\"));",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/nodes/geometry/nodes/node_geo_import_spz.cc",
+      "line": 80,
+      "original": "TIP_(\"Disabled, Blender was compiled without SPZ I/O\"));",
+      "replacement": "TIP_(\"Disabled, Lunola Forma was compiled without SPZ I/O\"));",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/nodes/geometry/nodes/node_geo_import_stl.cc",
+      "line": 85,
+      "original": "TIP_(\"Disabled, Blender was compiled without STL I/O\"));",
+      "replacement": "TIP_(\"Disabled, Lunola Forma was compiled without STL I/O\"));",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/nodes/geometry/nodes/node_geo_mesh_subdivide.cc",
+      "line": 83,
+      "original": "TIP_(\"Disabled, Blender was compiled without OpenSubdiv\"));",
+      "replacement": "TIP_(\"Disabled, Lunola Forma was compiled without OpenSubdiv\"));",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/nodes/geometry/nodes/node_geo_subdivision_surface.cc",
+      "line": 245,
+      "original": "TIP_(\"Disabled, Blender was compiled without OpenSubdiv\"));",
+      "replacement": "TIP_(\"Disabled, Lunola Forma was compiled without OpenSubdiv\"));",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/windowmanager/intern/wm_event_system.cc",
+      "line": 2897,
+      "original": "C, IFACE_(\"Blender File View\"), SPACE_FILE, U.filebrowser_display_type, true);",
+      "replacement": "C, IFACE_(\".blend File View\"), SPACE_FILE, U.filebrowser_display_type, true);",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/windowmanager/intern/wm_files.cc",
+      "line": 2618,
+      "original": "IFACE_(\"Blender will start next time as it is now.\"),",
+      "replacement": "IFACE_(\"Lunola Forma will start next time as it is now.\"),",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/windowmanager/intern/wm_files.cc",
+      "line": 2843,
+      "original": "title = IFACE_(\"Load Factory Blender Preferences\");",
+      "replacement": "title = IFACE_(\"Load Factory Lunola Forma Preferences\");",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/windowmanager/intern/wm_files.cc",
+      "line": 3441,
+      "original": "ot->description = \"Open a Blender file\";",
+      "replacement": "ot->description = \"Open a .blend file\";",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/windowmanager/intern/wm_files.cc",
+      "line": 4288,
+      "original": "\"Save the current Blender file with a numerically incremented name that does not \"",
+      "replacement": "\"Save the current .blend file with a numerically incremented name that does not \"",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/windowmanager/intern/wm_files.cc",
+      "line": 4296,
+      "original": "ot->name = \"Save Blender File\";",
+      "replacement": "ot->name = \"Save .blend File\";",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/windowmanager/intern/wm_files.cc",
+      "line": 4298,
+      "original": "ot->description = \"Save the current Blender file\";",
+      "replacement": "ot->description = \"Save the current .blend file\";",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/windowmanager/intern/wm_files.cc",
+      "line": 4321,
+      "original": "prop = RNA_def_boolean(ot->srna, \"exit\", false, \"Exit\", \"Exit Blender after saving\");",
+      "replacement": "prop = RNA_def_boolean(ot->srna, \"exit\", false, \"Exit\", \"Exit Lunola Forma after saving\");",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/windowmanager/intern/wm_files.cc",
+      "line": 4328,
+      "original": "\"Save the current Blender file with a numerically incremented name that \"",
+      "replacement": "\"Save the current .blend file with a numerically incremented name that \"",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/windowmanager/intern/wm_files.cc",
+      "line": 4646,
+      "original": "RPT_(\"The file is not a valid Blender file.\"),",
+      "replacement": "RPT_(\"The file is not a valid .blend file.\"),",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/windowmanager/intern/wm_files.cc",
+      "line": 4691,
+      "original": "RPT_(\"Saving it with this Blender (%s) may cause loss of data.\"),",
+      "replacement": "RPT_(\"Saving it with this Lunola Forma (%s) may cause loss of data.\"),",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/windowmanager/intern/wm_files.cc",
+      "line": 4702,
+      "original": "layout.label(RPT_(\"This file is managed by the Blender asset system. It can only be\"),",
+      "replacement": "layout.label(RPT_(\"This file is managed by the Lunola Forma asset system. It can only be\"),",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/windowmanager/intern/wm_operators.cc",
+      "line": 2515,
+      "original": "ot->name = \"Quit Blender\";",
+      "replacement": "ot->name = \"Quit Lunola Forma\";",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/windowmanager/intern/wm_operators.cc",
+      "line": 2517,
+      "original": "ot->description = \"Quit Blender\";",
+      "replacement": "ot->description = \"Quit Lunola Forma\";",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/windowmanager/intern/wm_platform_support.cc",
+      "line": 146,
+      "original": "STR_CONCAT(title, slen, \"Blender - \");",
+      "replacement": "STR_CONCAT(title, slen, \"Lunola Forma - \");",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/windowmanager/intern/wm_platform_support.cc",
+      "line": 166,
+      "original": "\"Newer graphics drivers might be available with better Blender compatibility.\"));",
+      "replacement": "\"Newer graphics drivers might be available with better Lunola Forma compatibility.\"));",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/windowmanager/intern/wm_platform_support.cc",
+      "line": 177,
+      "original": "STR_CONCAT(title, slen, \"Blender - \");",
+      "replacement": "STR_CONCAT(title, slen, \"Lunola Forma - \");",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/windowmanager/intern/wm_platform_support.cc",
+      "line": 200,
+      "original": "\"Upgrading to the latest macOS version may improve Blender support\"));",
+      "replacement": "\"Upgrading to the latest macOS version may improve Lunola Forma support\"));",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/windowmanager/intern/wm_platform_support.cc",
+      "line": 213,
+      "original": "\"Newer graphics drivers might be available with better Blender compatibility.\"));",
+      "replacement": "\"Newer graphics drivers might be available with better Lunola Forma compatibility.\"));",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/windowmanager/intern/wm_platform_support.cc",
+      "line": 224,
+      "original": "CTX_IFACE_(BLT_I18NCONTEXT_ID_WINDOWMANAGER, \"Blender will now close.\"));",
+      "replacement": "CTX_IFACE_(BLT_I18NCONTEXT_ID_WINDOWMANAGER, \"Lunola Forma will now close.\"));",
+      "category": "A",
+      "status": "source_contract_pending"
+    },
+    {
+      "file": "source/blender/windowmanager/intern/wm_playanim.cc",
+      "line": 106,
+      "original": "static const char *playanim_window_title = \"Blender Animation Player\";",
+      "replacement": "static const char *playanim_window_title = \"Lunola Forma Animation Player\";",
+      "category": "A",
+      "status": "source_contract_pending"
+    }
+  ],
+  "exceptions": [
+    {
+      "file": "source/blender/windowmanager/intern/wm_init_exit.cc",
+      "line": 769,
+      "original": "printf(\"\\nBlender quit\\n\");",
+      "category": "D",
+      "reason": "CLI/parser or embedded symbol compatibility; not a display-only literal replacement."
+    },
+    {
+      "file": "source/blender/windowmanager/intern/wm_window_icon.cc",
+      "line": 22,
+      "original": "extern \"C\" const char datatoc_blender_app_icon_svg[];",
+      "category": "D",
+      "reason": "CLI/parser or embedded symbol compatibility; not a display-only literal replacement."
+    },
+    {
+      "file": "source/blender/windowmanager/intern/wm_window_icon.cc",
+      "line": 34,
+      "original": "std::string svg_source = datatoc_blender_app_icon_svg;",
+      "category": "D",
+      "reason": "CLI/parser or embedded symbol compatibility; not a display-only literal replacement."
+    },
+    {
+      "file": "source/creator/creator_args.cc",
+      "line": 607,
+      "original": "printf(\"Blender %s\\n\", BKE_blender_version_string());",
+      "category": "D",
+      "reason": "CLI/parser or embedded symbol compatibility; not a display-only literal replacement."
+    },
+    {
+      "file": "source/creator/creator_args.cc",
+      "line": 629,
+      "original": "printf(\"Blender %s (hash %s built %s %s)\\n\",",
+      "category": "D",
+      "reason": "CLI/parser or embedded symbol compatibility; not a display-only literal replacement."
+    },
+    {
+      "file": "source/creator/creator_args.cc",
+      "line": 635,
+      "original": "printf(\"Blender %s\\n\", BKE_blender_version_string());",
+      "category": "D",
+      "reason": "CLI/parser or embedded symbol compatibility; not a display-only literal replacement."
+    },
+    {
+      "file": "source/creator/creator_args.cc",
+      "line": 641,
+      "original": "\"Print Blender version and exit.\";",
+      "category": "D",
+      "reason": "CLI/parser or embedded symbol compatibility; not a display-only literal replacement."
+    },
+    {
+      "file": "source/creator/creator_args.cc",
+      "line": 664,
+      "original": "PRINT(\"Blender %s\\n\", BKE_blender_version_string());",
+      "category": "D",
+      "reason": "CLI/parser or embedded symbol compatibility; not a display-only literal replacement."
+    },
+    {
+      "file": "source/creator/creator_args.cc",
+      "line": 1375,
+      "original": "printf(\"Blender %s\\n\", BKE_blender_version_string());",
+      "category": "D",
+      "reason": "CLI/parser or embedded symbol compatibility; not a display-only literal replacement."
+    },
+    {
+      "file": "source/creator/creator_args.cc",
+      "line": 1748,
+      "original": "\"\\tIf the requested Vulkan device is unavailable, Blender falls back to the saved GPU\\n\"",
+      "category": "D",
+      "reason": "CLI/parser or embedded symbol compatibility; not a display-only literal replacement."
+    },
+    {
+      "file": "source/creator/creator_args.cc",
+      "line": 1760,
+      "original": "printf(\"Blender GPU Device Listing (Vulkan):\\n\");",
+      "category": "D",
+      "reason": "CLI/parser or embedded symbol compatibility; not a display-only literal replacement."
+    },
+    {
+      "file": "source/creator/creator_args.cc",
+      "line": 1988,
+      "original": "\"\\tInstead of showing Blender's user interface, this runs Blender as an animation player,\\n\"",
+      "category": "D",
+      "reason": "CLI/parser or embedded symbol compatibility; not a display-only literal replacement."
+    },
+    {
+      "file": "source/creator/creator_args.cc",
+      "line": 1989,
+      "original": "\"\\tto view movies and image sequences rendered in Blender (ignored if '-b' is set).\\n\"",
+      "category": "D",
+      "reason": "CLI/parser or embedded symbol compatibility; not a display-only literal replacement."
+    },
+    {
+      "file": "source/creator/creator_args.cc",
+      "line": 2221,
+      "original": "\"\\teco: Schedules Blender threads exclusively to efficiency cores.\";",
+      "category": "D",
+      "reason": "CLI/parser or embedded symbol compatibility; not a display-only literal replacement."
+    },
+    {
+      "file": "source/creator/creator_args.cc",
+      "line": 2288,
+      "original": "\"\\tSee Blender's documentation on path templates for more details.\\n\"",
+      "category": "D",
+      "reason": "CLI/parser or embedded symbol compatibility; not a display-only literal replacement."
+    },
+    {
+      "file": "source/creator/creator_args.cc",
+      "line": 2329,
+      "original": "printf(\"Blender Engine Listing:\\n\");",
+      "category": "D",
+      "reason": "CLI/parser or embedded symbol compatibility; not a display-only literal replacement."
+    },
+    {
+      "file": "source/creator/creator_args.cc",
+      "line": 2373,
+      "original": "\"\\tFormats that can be compiled into Blender, not available on all systems:\\n\"",
+      "category": "D",
+      "reason": "CLI/parser or embedded symbol compatibility; not a display-only literal replacement."
+    },
+    {
+      "file": "source/creator/creator_args.cc",
+      "line": 2759,
+      "original": "fprintf(stderr, \"This Blender was built without Python support\\n\");",
+      "category": "D",
+      "reason": "CLI/parser or embedded symbol compatibility; not a display-only literal replacement."
+    },
+    {
+      "file": "source/creator/creator_args.cc",
+      "line": 2797,
+      "original": "fprintf(stderr, \"This Blender was built without Python support\\n\");",
+      "category": "D",
+      "reason": "CLI/parser or embedded symbol compatibility; not a display-only literal replacement."
+    },
+    {
+      "file": "source/creator/creator_args.cc",
+      "line": 2828,
+      "original": "fprintf(stderr, \"This Blender was built without Python support\\n\");",
+      "category": "D",
+      "reason": "CLI/parser or embedded symbol compatibility; not a display-only literal replacement."
+    },
+    {
+      "file": "source/creator/creator_args.cc",
+      "line": 2839,
+      "original": "\"Run Blender with an interactive console.\";",
+      "category": "D",
+      "reason": "CLI/parser or embedded symbol compatibility; not a display-only literal replacement."
+    },
+    {
+      "file": "source/creator/creator_args.cc",
+      "line": 2848,
+      "original": "fprintf(stderr, \"This Blender was built without python support\\n\");",
+      "category": "D",
+      "reason": "CLI/parser or embedded symbol compatibility; not a display-only literal replacement."
+    },
+    {
+      "file": "source/creator/creator_signals.cc",
+      "line": 79,
+      "original": "printf(\"\\nBlender killed\\n\");",
+      "category": "D",
+      "reason": "CLI/parser or embedded symbol compatibility; not a display-only literal replacement."
+    },
+    {
+      "file": "source/creator/creator_signals.cc",
+      "line": 82,
+      "original": "printf(\"\\nSent an internal break event. Press ^C again to kill Blender\\n\");",
+      "category": "D",
+      "reason": "CLI/parser or embedded symbol compatibility; not a display-only literal replacement."
+    }
+  ],
+  "navigation_changes": [
+    {
+      "file": "source/blender/blenlib/intern/system_win32.cc",
+      "original": "#include \"BLI_string.hh\"",
+      "replacement": "#include \"BLI_lunola_identity.hh\"\n#include \"BLI_string.hh\"",
+      "category": "B"
+    },
+    {
+      "file": "source/blender/blenlib/intern/system_win32.cc",
+      "original": "static std::string get_os_info()",
+      "replacement": "[[maybe_unused]] static std::string get_os_info()",
+      "category": "B"
+    },
+    {
+      "file": "source/blender/blenlib/intern/system_win32.cc",
+      "original": "static std::wstring url_encode_wstring(const std::string &str)",
+      "replacement": "[[maybe_unused]] static std::wstring url_encode_wstring(const std::string &str)",
+      "category": "B"
+    },
+    {
+      "file": "source/blender/blenlib/intern/system_win32.cc",
+      "original": "{IDOK, L\"Report a Bug\"}",
+      "replacement": "{IDOK, L\"Report an Issue\"}",
+      "category": "B"
+    },
+    {
+      "file": "source/blender/blenlib/intern/system_win32.cc",
+      "original": "L\"reproduce this issue, please submit a bug report.\\n\"",
+      "replacement": "L\"reproduce this issue, please submit an issue report.\\n\"\n      L\"Review and redact logs before attaching them; no diagnostics are sent automatically.\\n\"",
+      "category": "B"
+    },
+    {
+      "file": "source/blender/blenlib/intern/system_win32.cc",
+      "original": "        /* Open the bug report form with pre-filled data. */\n        /* clang-format off */\n        std::wstring link =\n            L\"https://redirect.blender.org/\"\n            L\"?type=bug_report\"\n            L\"&project=blender\"\n            L\"&os=\" + url_encode_wstring(get_os_info()) +\n            L\"&gpu=\" + url_encode_wstring(data_ptr->gpu_name) +\n            L\"&broken_version=\" + url_encode_wstring(data_ptr->build_version) +\n            L\"&utm_content=crash_dialog\";\n        /* clang-format on */\n        ShellExecuteW(nullptr, L\"open\", link.c_str(), nullptr, nullptr, SW_SHOWNORMAL);",
+      "replacement": "        /* Open the product issue form without transmitting private diagnostic query data. */\n        ShellExecuteW(\n            nullptr, L\"open\", lunola::issue_report_url, nullptr, nullptr, SW_SHOWNORMAL);",
+      "category": "B"
+    }
+  ]
+}

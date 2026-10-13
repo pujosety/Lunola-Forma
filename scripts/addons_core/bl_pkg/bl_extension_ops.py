@@ -448,7 +448,7 @@ def lock_result_any_failed_with_report(op, lock_result, report_type='ERROR'):
     # Hint for users as this is non-obvious, only show once.
     unlock_hint_text = (
         "\n"
-        "If the lock was held by a Blender instance that exited unexpectedly,\n"
+        "If the lock was held by a Lunola Forma or upstream Blender instance that exited unexpectedly,\n"
         "use: \"Force Unlock Repository\" to clear the lock.\n"
         "Access from the \"Repositories\" popover in the extensions preferences."
     )
@@ -1765,7 +1765,7 @@ def _extensions_maybe_online_action_poll_impl(cls, repo, action):
                 case _:
                     assert False, "Unreachable"
             if bpy.app.online_access_override:
-                message += " " + rpt_("Launch Blender without --offline-mode")
+                message += " " + rpt_("Launch Lunola Forma without --offline-mode")
             else:
                 message += " " + rpt_("Enable online access in System preferences")
             cls.poll_message_set(message)
@@ -2200,7 +2200,7 @@ class EXTENSIONS_OT_repo_unlock(Operator):
         if lock_is_ours:
             return (
                 "Active repository lock held by this session, "
-                "either wait until the operation is finished or restart Blender"
+                "either wait until the operation is finished or restart Lunola Forma"
             ), lock_mtime, lock_error
         return None, lock_mtime, lock_error
 
@@ -2256,7 +2256,7 @@ class EXTENSIONS_OT_repo_unlock(Operator):
 
         layout = self.layout
         col = layout.column()
-        col.label(text="Warning! Before unlocking, ensure another instance of Blender is not running.")
+        col.label(text="Warning! Before unlocking, ensure no Lunola Forma or upstream Blender instance is using this repository.")
         col.label(text="Force unlocking may be necessary in the case of a crash or power failure,")
         col.label(text="otherwise it should be avoided.")
 
@@ -3324,7 +3324,7 @@ class EXTENSIONS_OT_package_install(Operator, _ExtCmdMixIn):
         if not bpy.app.online_access:
             if bpy.app.online_access_override:
                 cls.poll_message_set(
-                    "Online access required to install or update. Launch Blender without --offline-mode")
+                    "Online access required to install or update. Launch Lunola Forma without --offline-mode")
             else:
                 cls.poll_message_set(
                     "Online access required to install or update. Enable online access in System preferences")
@@ -4479,7 +4479,7 @@ class EXTENSIONS_OT_userpref_show_online(Operator):
     def poll(cls, _context):
         if bpy.app.online_access_override:
             if not bpy.app.online_access:
-                cls.poll_message_set("Blender was launched in offline mode, which cannot be changed at runtime")
+                cls.poll_message_set("Lunola Forma was launched in offline mode, which cannot be changed at runtime")
                 return False
         return True
 
@@ -4489,8 +4489,8 @@ class EXTENSIONS_OT_userpref_show_online(Operator):
 
 
 class EXTENSIONS_OT_userpref_allow_online(Operator):
-    """Allow Blender to access the internet. Add-ons that follow this setting will only connect to """ \
-        """the internet if enabled. However, Blender cannot prevent third-party add-ons from """ \
+    """Allow Lunola Forma to access the internet. Add-ons that follow this setting will only connect to """ \
+        """the internet if enabled. However, Lunola Forma cannot prevent third-party add-ons from """ \
         """violating this rule."""
     bl_idname = "extensions.userpref_allow_online"
     bl_label = ""
@@ -4500,7 +4500,7 @@ class EXTENSIONS_OT_userpref_allow_online(Operator):
     def poll(cls, _context):
         if bpy.app.online_access_override:
             if not bpy.app.online_access:
-                cls.poll_message_set("Blender was launched in offline mode, which cannot be changed at runtime")
+                cls.poll_message_set("Lunola Forma was launched in offline mode, which cannot be changed at runtime")
                 return False
         return True
 
@@ -4512,8 +4512,8 @@ class EXTENSIONS_OT_userpref_allow_online(Operator):
 # NOTE: this is a wrapper for `extensions.userpref_allow_online`.
 # It exists *only* show a dialog.
 class EXTENSIONS_OT_userpref_allow_online_popup(Operator):
-    """Allow Blender to access the internet. Add-ons that follow this setting will only connect to """ \
-        """the internet if enabled. However, Blender cannot prevent third-party add-ons from """ \
+    """Allow Lunola Forma to access the internet. Add-ons that follow this setting will only connect to """ \
+        """the internet if enabled. However, Lunola Forma cannot prevent third-party add-ons from """ \
         """violating this rule."""
     bl_idname = "extensions.userpref_allow_online_popup"
     bl_label = ""
@@ -4547,7 +4547,7 @@ class EXTENSIONS_OT_userpref_allow_online_popup(Operator):
             lines = (
                 rpt_("Online access required to install or update."),
                 "",
-                rpt_("Launch Blender without --offline-mode"),
+                rpt_("Launch Lunola Forma without --offline-mode"),
             )
         else:
             lines = (

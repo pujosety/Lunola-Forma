@@ -27,7 +27,7 @@ namespace blender {
 #define MESH_DM_INFO_STR_MAX 16384
 
 static const EnumPropertyItem space_items[] = {
-    {CONSTRAINT_SPACE_WORLD, "WORLD", 0, "World Space", "The most global space in Blender"},
+    {CONSTRAINT_SPACE_WORLD, "WORLD", 0, "World Space", "The most global space in Lunola Forma"},
     {CONSTRAINT_SPACE_POSE,
      "POSE",
      0,
@@ -1066,7 +1066,7 @@ void RNA_api_object(StructRNA *srna)
                   false,
                   "",
                   "Preserve all data layers in the mesh, like UV maps and vertex groups. "
-                  "By default Blender only computes the subset of data layers needed for viewport "
+                  "By default Lunola Forma only computes the subset of data layers needed for viewport "
                   "display and rendering, for better performance.");
   RNA_def_pointer(
       func,

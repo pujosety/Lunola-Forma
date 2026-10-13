@@ -140,7 +140,7 @@ class USERPREF_MT_save_load(Menu):
         app_template = prefs.app_template
         if app_template:
             display_name = bpy.path.display_name(iface_(app_template))
-            layout.operator("wm.read_factory_userpref", text="Load Factory Blender Preferences")
+            layout.operator("wm.read_factory_userpref", text="Load Factory Lunola Forma Preferences")
             props = layout.operator(
                 "wm.read_factory_userpref",
                 text=iface_("Load Factory {:s} Preferences").format(display_name),
@@ -359,7 +359,7 @@ class USERPREF_PT_interface_statusbar(InterfacePanel, CenterAlignMixIn, Panel):
         col.prop(view, "show_statusbar_memory", text="System Memory")
         col.prop(view, "show_statusbar_vram", text="Video Memory")
         col.prop(view, "show_extensions_updates", text="Extensions Updates")
-        col.prop(view, "show_statusbar_version", text="Blender Version")
+        col.prop(view, "show_statusbar_version", text="Blender Engine Version")
 
 
 class USERPREF_PT_interface_menus(InterfacePanel, CenterAlignMixIn, Panel):
@@ -771,7 +771,7 @@ class USERPREF_PT_system_display_graphics(SystemPanel, CenterAlignMixIn, Panel):
             col.prop(system, "gpu_preferred_device")
 
         if system.gpu_backend != gpu.platform.backend_type_get():
-            layout.label(text="A restart of Blender is required", icon='STATUS_INFO')
+            layout.label(text="A restart of Lunola Forma is required", icon='STATUS_INFO')
 
         if system.gpu_backend == 'VULKAN':
             if sys.platform == "win32" and gpu.platform.device_type_get() == 'QUALCOMM':
@@ -816,7 +816,7 @@ class USERPREF_PT_system_os_settings(SystemPanel, CenterAlignMixIn, Panel):
 
     def draw_centered(self, context, layout):
         if self._draw_associate_supported_or_label(context, layout):
-            layout.label(text="Open blend files with this Blender version")
+            layout.label(text="Open blend files with this Lunola Forma version")
             split = layout.split(factor=0.5)
             split.alignment = 'LEFT'
             split.operator("preferences.associate_blend", text="Register")
@@ -2710,13 +2710,17 @@ class USERPREF_PT_addons(AddOnPanel, Panel):
                     sub = split.row()
                     if bl_info["doc_url"]:
                         sub.operator(
-                            "wm.url_open", text="Documentation", icon='HELP',
+                            "wm.url_open",
+                            text="Add-on Documentation" if user_addon else "Upstream Add-on Documentation",
+                            icon='HELP',
                         ).url = bl_info["doc_url"]
                     # Only add "Report a Bug" button if tracker_url is set.
                     # None of the core add-ons are expected to have tracker info (glTF is the exception).
                     if bl_info.get("tracker_url"):
                         sub.operator(
-                            "wm.url_open", text="Report a Bug", icon='URL',
+                            "wm.url_open",
+                            text="Report Add-on Bug" if user_addon else "Report Upstream Add-on Bug",
+                            icon='URL',
                         ).url = bl_info["tracker_url"]
 
                 if user_addon:
@@ -2986,7 +2990,7 @@ def _draw_experimental_items(layout, preferences, items, url_prefix="https://pro
                 text = reference
 
             col = split.split()
-            col.operator("wm.url_open", text=text, icon='URL').url = url_prefix + url_ext
+            col.operator("wm.url_open", text="Upstream: " + text, icon='URL').url = url_prefix + url_ext
 
 
 class USERPREF_PT_developer_tools(Panel):

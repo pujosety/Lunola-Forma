@@ -4,10 +4,15 @@
 
 string(TIMESTAMP CURRENT_YEAR "%Y")
 
-set(PROJECT_DESCRIPTION  "Blender is the free and open source 3D creation suite software.")
+set(PROJECT_DESCRIPTION  "Lunola Forma - Professional 3D Creation Suite, based on Blender.")
 set(PROJECT_COPYRIGHT    "Copyright (C) 2001-${CURRENT_YEAR} Blender Authors")
-set(PROJECT_CONTACT      "foundation@blender.org")
-set(PROJECT_VENDOR       "Blender Foundation")
+# No verified distributor email is available.
+set(PROJECT_CONTACT      "")
+set(PROJECT_VENDOR       "Pujo Setyo")
+
+# Display/archive identity only; project targets and install identities stay unchanged.
+set(CPACK_PACKAGE_NAME "Lunola Forma")
+set(LUNOLA_PACKAGE_ARCHIVE_NAME "lunola-forma")
 
 set(MAJOR_VERSION ${BLENDER_VERSION_MAJOR})
 set(MINOR_VERSION ${BLENDER_VERSION_MINOR})
@@ -46,6 +51,8 @@ unset(MY_WC_HASH)
 # Force Package Name
 execute_process(COMMAND date "+%Y%m%d" OUTPUT_VARIABLE CPACK_DATE OUTPUT_STRIP_TRAILING_WHITESPACE)
 string(TOLOWER ${PROJECT_NAME} PROJECT_NAME_LOWER)
+# Preserve the technical RPM name instead of deriving it from the display label.
+set(CPACK_RPM_PACKAGE_NAME ${PROJECT_NAME_LOWER})
 if(MSVC)
   if("${CMAKE_SIZEOF_VOID_P}" EQUAL "8")
     set(PACKAGE_ARCH windows64)
@@ -59,7 +66,7 @@ endif()
 if(CPACK_OVERRIDE_PACKAGENAME)
   set(CPACK_PACKAGE_FILE_NAME ${CPACK_OVERRIDE_PACKAGENAME}-${PACKAGE_ARCH})
 else()
-  set(CPACK_PACKAGE_FILE_NAME ${PROJECT_NAME_LOWER}-${MAJOR_VERSION}.${MINOR_VERSION}.${PATCH_VERSION}-git${CPACK_DATE}.${BUILD_REV}-${PACKAGE_ARCH})
+  set(CPACK_PACKAGE_FILE_NAME ${LUNOLA_PACKAGE_ARCHIVE_NAME}-${MAJOR_VERSION}.${MINOR_VERSION}.${PATCH_VERSION}-git${CPACK_DATE}.${BUILD_REV}-${PACKAGE_ARCH})
 endif()
 
 if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
@@ -113,8 +120,9 @@ if(WIN32)
   set(CPACK_WIX_LIGHT_EXTRA_FLAGS -dcl:medium)
 endif()
 
-set(CPACK_PACKAGE_EXECUTABLES "blender-launcher" "Blender ${MAJOR_VERSION}.${MINOR_VERSION}")
-set(CPACK_CREATE_DESKTOP_LINKS "blender-launcher" "Blender ${MAJOR_VERSION}.${MINOR_VERSION}")
+set(CPACK_PACKAGE_EXECUTABLES "blender-launcher" "Lunola Forma ${MAJOR_VERSION}.${MINOR_VERSION}")
+# Desktop-link entries are executable tokens, not display-name pairs.
+set(CPACK_CREATE_DESKTOP_LINKS "blender-launcher")
 
 include(CPack)
 
@@ -135,7 +143,7 @@ endfunction()
 
 if(APPLE)
   add_package_archive(
-    "${PROJECT_NAME}-${BLENDER_VERSION}-${BUILD_REV}-OSX-${CMAKE_OSX_ARCHITECTURES}"
+    "${LUNOLA_PACKAGE_ARCHIVE_NAME}-${BLENDER_VERSION}-${BUILD_REV}-OSX-${CMAKE_OSX_ARCHITECTURES}"
     "zip"
   )
 elseif(UNIX)
@@ -143,7 +151,7 @@ elseif(UNIX)
   string(TOLOWER ${CMAKE_SYSTEM_NAME} PACKAGE_SYSTEM_NAME)
 
   add_package_archive(
-    "${PROJECT_NAME}-${BLENDER_VERSION}-${BUILD_REV}-${PACKAGE_SYSTEM_NAME}-${CMAKE_SYSTEM_PROCESSOR}"
+    "${LUNOLA_PACKAGE_ARCHIVE_NAME}-${BLENDER_VERSION}-${BUILD_REV}-${PACKAGE_SYSTEM_NAME}-${CMAKE_SYSTEM_PROCESSOR}"
     "tar.xz"
   )
 endif()

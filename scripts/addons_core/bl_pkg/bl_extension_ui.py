@@ -261,12 +261,14 @@ def addon_draw_item_expanded(
     col_b.alignment = 'LEFT'
 
     if item_doc_url:
-        col_a.label(text="Website")
+        col_a.label(text="Upstream Add-on Website" if addon_type == ADDON_TYPE_LEGACY_CORE
+                    else "Add-on / Extension Website")
         col_b.link(url=item_doc_url, text=domain_extract_from_url(item_doc_url))
     # Only add "Feedback" link if tracker_url is set.
     # None of the core add-ons are expected to have tracker info (glTF is the exception).
     if item_tracker_url:
-        col_a.label(text="Feedback", text_ctxt=i18n_contexts.editor_preferences)
+        col_a.label(text="Upstream Add-on Feedback" if addon_type == ADDON_TYPE_LEGACY_CORE
+                    else "Add-on / Extension Feedback", text_ctxt=i18n_contexts.editor_preferences)
         col_b.link(url=item_tracker_url, text=domain_extract_from_url(item_tracker_url))
 
     if USE_SHOW_ADDON_TYPE_AS_TEXT:
@@ -333,15 +335,15 @@ def addons_panel_draw_missing_with_extension_impl(
             break
 
     box = layout_panel.box()
-    box.label(text="Add-ons previously shipped with Blender are now available from extensions.blender.org.")
+    box.label(text="Add-ons previously shipped with upstream Blender are now available from extensions.blender.org.")
 
     pkg_manifest_remote = {}
 
     if repo is None:
         # Most likely the user manually removed this.
-        box.label(text="Blender's extension repository not found!", icon='STATUS_ERROR')
+        box.label(text="Upstream Blender extension repository not found!", icon='STATUS_ERROR')
     elif not repo.enabled:
-        box.label(text="Blender's extension repository must be enabled to install extensions!", icon='STATUS_ERROR')
+        box.label(text="Upstream Blender extension repository must be enabled to install extensions!", icon='STATUS_ERROR')
         repo_index = -1
     else:
         # Ensure the remote data is available from which to install the extensions.
@@ -351,7 +353,7 @@ def addons_panel_draw_missing_with_extension_impl(
         pkg_manifest_remote = repo_cache_store.refresh_remote_from_directory(directory=repo.directory, error_fn=print)
         if pkg_manifest_remote is None:
             row = box.row()
-            row.label(text="Blender's extension repository must be refreshed!", icon='STATUS_WARNING_FILLED')
+            row.label(text="Upstream Blender extension repository must be refreshed!", icon='STATUS_WARNING_FILLED')
             # Ideally this would only sync one repository, but there is no operator to do this
             # and this one corner-case doesn't justify adding a new operator.
             rowsub = row.row()
@@ -1245,7 +1247,7 @@ def extensions_panel_draw_online_extensions_request_impl(
 
     # Text wrapping isn't supported, manually wrap.
     for line in (
-            rpt_("Internet access is required to install and update online extensions. "),
+            rpt_("Internet access is required for the selected upstream or third-party extension repositories. "),
             rpt_("You can adjust this later from \"System\" preferences."),
     ):
         box.label(text=line, translate=False)
@@ -1255,7 +1257,7 @@ def extensions_panel_draw_online_extensions_request_impl(
     row.label(text="While offline, use \"Install from Disk\" instead.")
     row.operator(
         "wm.url_open",
-        text="",
+        text="Upstream Extension Manual",
         icon='URL',
         emboss=False,
     ).url = (
@@ -1857,7 +1859,7 @@ class USERPREF_MT_extensions_settings(Menu):
 
         prefs = context.preferences
 
-        layout.operator("wm.url_open_preset", text="Visit Extensions Platform", icon='URL').type = 'EXTENSIONS'
+        layout.operator("wm.url_open_preset", text="Visit Upstream Blender Extensions", icon='URL').type = 'EXTENSIONS'
         layout.separator()
 
         layout.operator("extensions.repo_sync_all", icon='FILE_REFRESH')

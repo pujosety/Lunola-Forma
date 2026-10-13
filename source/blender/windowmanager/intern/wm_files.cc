@@ -2615,7 +2615,7 @@ static wmOperatorStatus wm_homefile_write_invoke(bContext *C,
     return WM_operator_confirm_ex(C,
                                   op,
                                   IFACE_("Overwrite Startup File"),
-                                  IFACE_("Blender will start next time as it is now."),
+                                  IFACE_("Lunola Forma will start next time as it is now."),
                                   IFACE_("Overwrite"),
                                   ui::AlertIcon::Question,
                                   false);
@@ -2840,7 +2840,7 @@ static wmOperatorStatus wm_userpref_read_invoke(bContext *C,
                         IFACE_(display_name));
   }
   else {
-    title = IFACE_("Load Factory Blender Preferences");
+    title = IFACE_("Load Factory Lunola Forma Preferences");
   }
 
   return WM_operator_confirm_ex(
@@ -3438,7 +3438,7 @@ void WM_OT_open_mainfile(wmOperatorType *ot)
 {
   ot->name = "Open";
   ot->idname = "WM_OT_open_mainfile";
-  ot->description = "Open a Blender file";
+  ot->description = "Open a .blend file";
   ot->get_description = wm_open_mainfile_get_description;
 
   ot->invoke = wm_open_mainfile_invoke;
@@ -4285,7 +4285,7 @@ static std::string wm_save_mainfile_get_description(bContext * /*C*/,
 {
   if (RNA_boolean_get(ptr, "incremental")) {
     return TIP_(
-        "Save the current Blender file with a numerically incremented name that does not "
+        "Save the current .blend file with a numerically incremented name that does not "
         "overwrite any existing files");
   }
   return "";
@@ -4293,9 +4293,9 @@ static std::string wm_save_mainfile_get_description(bContext * /*C*/,
 
 void WM_OT_save_mainfile(wmOperatorType *ot)
 {
-  ot->name = "Save Blender File";
+  ot->name = "Save .blend File";
   ot->idname = "WM_OT_save_mainfile";
-  ot->description = "Save the current Blender file";
+  ot->description = "Save the current .blend file";
 
   ot->invoke = wm_save_mainfile_invoke;
   ot->exec = wm_save_as_mainfile_exec;
@@ -4318,14 +4318,14 @@ void WM_OT_save_mainfile(wmOperatorType *ot)
                   "Remap Relative",
                   "Remap relative paths when saving to a different directory");
 
-  prop = RNA_def_boolean(ot->srna, "exit", false, "Exit", "Exit Blender after saving");
+  prop = RNA_def_boolean(ot->srna, "exit", false, "Exit", "Exit Lunola Forma after saving");
   RNA_def_property_flag(prop, PROP_HIDDEN | PROP_SKIP_SAVE);
 
   prop = RNA_def_boolean(ot->srna,
                          "incremental",
                          false,
                          "Incremental",
-                         "Save the current Blender file with a numerically incremented name that "
+                         "Save the current .blend file with a numerically incremented name that "
                          "does not overwrite any existing files");
   RNA_def_property_flag(prop, PROP_HIDDEN | PROP_SKIP_SAVE);
 
@@ -4643,7 +4643,7 @@ void wm_test_foreign_file_warning(bContext *C)
     CTX_wm_window_set(C, win);
     alert(C,
           RPT_("Unable to Load File"),
-          RPT_("The file is not a valid Blender file."),
+          RPT_("The file is not a valid .blend file."),
           ui::AlertIcon::Error,
           false);
 
@@ -4688,7 +4688,7 @@ static void file_overwrite_detailed_info_show(ui::Layout &parent_layout, Main *b
              RPT_("This file was saved by a newer version of Blender (%s)."),
              writer_ver_str);
     SNPRINTF(message_line2,
-             RPT_("Saving it with this Blender (%s) may cause loss of data."),
+             RPT_("Saving it with this Lunola Forma (%s) may cause loss of data."),
              current_ver_str);
     layout.label(message_line1, ICON_NONE);
     layout.label(message_line2, ICON_NONE);
@@ -4699,7 +4699,7 @@ static void file_overwrite_detailed_info_show(ui::Layout &parent_layout, Main *b
       layout.separator(1.4f);
     }
 
-    layout.label(RPT_("This file is managed by the Blender asset system. It can only be"),
+    layout.label(RPT_("This file is managed by the Lunola Forma asset system. It can only be"),
                  ICON_NONE);
     layout.label(RPT_("saved as a new, regular file."), ICON_NONE);
   }

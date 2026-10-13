@@ -62,6 +62,10 @@ The native hover tooltip partly overlaps menu rows in these captures; exact rout
 
 The exact verified binary has also been packaged as `Lunola-Forma-5.4.0-Alpha-gitd373d95263ee-Windows-x64.zip`, extracted and tested again: **12/12 runtime PASS**. See [portable package identity, checksum and limits](PORTABLE_PACKAGE_VERIFICATION.md). This remains a local development package, not a public release or installer certification.
 
+## Local Windows installer candidate
+
+A separate per-user **Lunola Forma** MSI has now been built and its actual database and embedded runtime verified. The final CAB-restored payload passed **12/12 runtime checks**. **Actual install/uninstall and clean-machine tests remain NOT RUN** because Windows Sandbox is unavailable on the host. See [installer candidate identity, warnings and remaining gates](WINDOWS_INSTALLER_CANDIDATE.md).
+
 ## Remaining release gates and scope limits
 
 - Application UI scaling is **not** certification of Windows OS-level DPI, all resolutions, all themes or every localized interface.

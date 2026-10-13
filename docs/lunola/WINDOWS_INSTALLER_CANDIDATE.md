@@ -1,5 +1,7 @@
 # Windows MSI candidate — Lunola Forma
 
+**Historical initial candidate:** a later [wizard fix and observed host installation](WINDOWS_INSTALLER_WIZARD_FIX.md) supersedes the UI/host-install status below. The original artifact and its creation-time evidence are preserved here.
+
 ## Actual artifact
 
 **Public product name: Lunola Forma. Publisher: Pujo Setyo.**

@@ -64,7 +64,7 @@ The exact verified binary has also been packaged as `Lunola-Forma-5.4.0-Alpha-gi
 
 ## Local Windows installer candidate
 
-A separate per-user **Lunola Forma** MSI has now been built and its actual database and embedded runtime verified. The final CAB-restored payload passed **12/12 runtime checks**. **Actual install/uninstall and clean-machine tests remain NOT RUN** because Windows Sandbox is unavailable on the host. See [installer candidate identity, warnings and remaining gates](WINDOWS_INSTALLER_CANDIDATE.md).
+The latest MSI now has a real **Lunola Forma Setup** wizard. Its Welcome was captured, the interactive host upgrade completed with MSI result **0**, and the actual installed application passed **12/12 runtime checks**. Controlled uninstall/repair, clean-machine validation and signing remain open. See [wizard fix and observed installed result](WINDOWS_INSTALLER_WIZARD_FIX.md); the [initial candidate report](WINDOWS_INSTALLER_CANDIDATE.md) is a historical pre-wizard milestone.
 
 ## Remaining release gates and scope limits
 

@@ -1,5 +1,17 @@
 # Test results
 
+## Final byline revision — executed results
+
+The final installed Windows byline build completed compilation/install, version execution, embedded byline asset verification, native PE icon verification, installed header data verification and all 12 runtime smoke cases. The repository harness independently repeated all 12 cases from the publication workspace: API, transform, material, modifier, Geometry Nodes, animation, add-on, OBJ export, save/reopen, Eevee and Cycles CPU. Launcher contracts: 2 PASS; all 3 QA scripts parse.
+
+Product identity source/resource checks: 13 PASS. Approved asset checks: 20 PASS. Icon contracts: 9 PASS. GUI startup/title was captured; detailed About sizing/theme/DPI, GPU release parity and clean-machine installation remain uncertified. These results concern the executable built before the publication commit, not a rebuild from the published Git commit.
+
+Reproduce with `tools/lunola/qa/run_smoke.py`, an explicit executable, and a fresh output below `tools/lunola/qa/results/`. Generated reports are intentionally excluded from the published source. See [publication evidence](../../PUBLICATION.md).
+
+## Historical baseline and Phase C evidence
+
+The following matrix records earlier milestones; its NOT RUN cells are historical and do not supersede the final byline results above.
+
 Status: unmodified baseline 12/12 background smoke tests PASS, independently read and counted from actual summary; Phase C branded application background smoke tests also 12/12 PASS. Report: `D:/Lunola/Forma/audit/qa/results/phase-c-20261013-043736/summary.json`. Actual PE metadata and native window title verified; About visual layout NOT VERIFIED. Final splash/icon build tests remain NOT RUN. Evidence: `D:/Lunola/Forma/audit/qa/results/baseline-auto-20261013-015309/summary.json`. GUI screenshot: `D:/Lunola/Forma/audit/screenshots/baseline-startup-vulkan-fallback.png`. UI started, but warning overlaps splash and manual interaction was not authorized.
 
 ## Preparation verified

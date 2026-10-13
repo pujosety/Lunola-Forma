@@ -3522,7 +3522,7 @@ class WM_MT_splash_quick_setup(Menu):
         sub = col.column(heading="Keymap")
         text = bpy.path.display_name(kc.name)
         if not text or text == "Blender":
-            text = "Lunola Forma (Blender-compatible)"
+            text = "Lunola Forma"
         sub.menu("USERPREF_MT_keyconfigs", text=text)
 
         if hasattr(kc_prefs, "select_mouse"):
@@ -3645,7 +3645,7 @@ class WM_MT_splash_about(Menu):
         # Upstream authorship belongs with legal/source information, not product promotion.
         col.label(text="Open Source Credits")
         col.operator("wm.url_open", text="Source & Licenses", icon='URL').url = LUNOLA_LICENSES_URL
-        col.operator("wm.url_open", text="Upstream GPL Information", icon='URL').url = "https://www.blender.org/about/license/"
+        col.operator("wm.url_open", text="Upstream GPL", icon='URL').url = "https://www.blender.org/about/license/"
         col.operator("wm.url_open_preset", text="Upstream Authors", icon='URL').type = 'CREDITS'
 
         # Attribution is full-width instead of clipped in the narrow link column.

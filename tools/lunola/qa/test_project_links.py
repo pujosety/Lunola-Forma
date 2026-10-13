@@ -13,7 +13,8 @@ class ProjectLinksTests(unittest.TestCase):
         wm = (ROOT / 'scripts/startup/bl_operators/wm.py').read_text(encoding='utf-8')
         quick = wm.split('class WM_MT_splash_quick_setup(Menu):', 1)[1].split('\n\nclass ', 1)[0]
         self.assertIn('Lunola Forma Dark', quick)
-        self.assertIn('Lunola Forma (Blender-compatible)', quick)
+        self.assertIn('text = "Lunola Forma"', quick)
+        self.assertNotIn('Lunola Forma (Blender-compatible)', quick)
         self.assertIn('prefs.view', quick)
         self.assertNotIn('kc.name =', quick)
         self.assertNotIn('Import Blender', quick)
@@ -32,6 +33,7 @@ class ProjectLinksTests(unittest.TestCase):
         self.assertIn('Professional 3D Creation Suite', about)
         self.assertIn('LUNOLA_PROJECT_URL', about)
         self.assertIn('credits = layout.column', about)
+        self.assertIn('text="Upstream GPL"', about)
         self.assertIn('bpy.app.build_hash', about)
         bug = wm.split('def _url_from_bug():', 1)[1].split('@staticmethod', 1)[0]
         self.assertIn('LUNOLA_BUG_REPORT_URL', bug)

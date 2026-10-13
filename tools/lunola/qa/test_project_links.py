@@ -13,6 +13,7 @@ class ProjectLinksTests(unittest.TestCase):
         wm = (ROOT / 'scripts/startup/bl_operators/wm.py').read_text(encoding='utf-8')
         quick = wm.split('class WM_MT_splash_quick_setup(Menu):', 1)[1].split('\n\nclass ', 1)[0]
         self.assertIn('Lunola Forma Dark', quick)
+        self.assertIn('Lunola Forma Light', quick)
         self.assertIn('text = "Lunola Forma"', quick)
         self.assertNotIn('Lunola Forma (Blender-compatible)', quick)
         self.assertIn('prefs.view', quick)

@@ -3509,8 +3509,11 @@ class WM_MT_splash_quick_setup(Menu):
         # Themes.
         sub = col.column(heading="Theme")
         label = bpy.types.USERPREF_MT_interface_theme_presets.bl_label
-        if label in {"Presets", "Blender Dark"}:
-            label = "Lunola Forma Dark"
+        label = {
+            "Presets": "Lunola Forma Dark",
+            "Blender Dark": "Lunola Forma Dark",
+            "Blender Light": "Lunola Forma Light",
+        }.get(label, label)
         sub.menu("USERPREF_MT_interface_theme_presets", text=label)
 
         col.separator()

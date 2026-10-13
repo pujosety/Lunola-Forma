@@ -2,9 +2,20 @@
 
 **Lunola Forma by Pujo Setyo**
 
-## Unreleased — 5.4.0 Alpha engine base
+## 5.4.0 Alpha 1 — October 13, 2026
 
-There is no published binary release. This changelog distinguishes previously executed local verification from current source/documentation work; it is not evidence of a rebuild of this branch.
+Unsigned Windows x64 development prerelease. [Downloads and corresponding source](https://github.com/pujosety/Lunola-Forma/releases/tag/v5.4.0-alpha.1); [release notes and limitations](docs/lunola/RELEASE_ALPHA_1.md).
+
+- Complete Lunola Forma display identity and privacy-safe product navigation; original APIs, engine, formats and attribution retained.
+- Tested portable ZIP and branded native installer revision 2 with approved logo/splash/header icon and by Pujo Setyo.
+- User-approved host upgrade: MSI 0, correct installed identity/shortcut, 12/12 actual installed runtime cases PASS.
+- Hydrated application source, pinned copyleft dependency source archives, packaging recipes, SHA256 checksums and binary/source provenance supplied alongside downloads.
+- Exact executable source is d373d95263ee1824ac864ab9f0478274754c0b4a; later release-tag source changes are packaging/docs, not a rebuild claim.
+- Signing, clean-machine, controlled repair/uninstall/rollback, comprehensive GPU/add-on and native-DPI coverage remain unverified.
+
+## Historical pre-release milestones — 5.4.0 Alpha engine base
+
+The following records describe earlier local/source milestones and their limits at that time; they do not override the current release notes or claim a new engine rebuild.
 
 ### Previously built and locally verified
 

@@ -9,7 +9,7 @@
 - Engine version: **5.4.0 Alpha**, unchanged.
 - Local complete installed folder: `D:/Lunola/Forma/Lunola-Forma-complete-identity-final`.
 - Executable: `blender.exe`; launcher: `blender-launcher.exe`.
-- This is a locally verified portable development build, not a signed installer or public release. This phase has **not been pushed**. A later documentation-only commit does not change the source hash embedded in this executable.
+- This is the verified engine used in the unsigned Alpha 1 Windows development prerelease, not a signed or stable build. The identity source and subsequent packaging/documentation changes are included in the Alpha 1 publication. A later documentation-only commit does not change the source hash embedded in this executable.
 
 ## Executed checks
 
@@ -64,7 +64,7 @@ The exact verified binary has also been packaged as `Lunola-Forma-5.4.0-Alpha-gi
 
 ## Local Windows installer candidate
 
-The latest MSI now has a real **Lunola Forma Setup** wizard. Its Welcome was captured, the interactive host upgrade completed with MSI result **0**, and the actual installed application passed **12/12 runtime checks**. Controlled uninstall/repair, clean-machine validation and signing remain open. See [wizard fix and observed installed result](WINDOWS_INSTALLER_WIZARD_FIX.md); the [initial candidate report](WINDOWS_INSTALLER_CANDIDATE.md) is a historical pre-wizard milestone.
+Revision 1 has a real **Lunola Forma Setup** wizard: its interactive host upgrade completed with MSI result **0**, and that installed application passed **12/12 runtime checks**. The newer **artwork revision 2** adds approved logo/splash/header-icon derivatives and `by Pujo Setyo`; its package, resource bytes and three real native inactive previews are verified. A subsequent **user-approved host upgrade to revision 2 returned MSI 0**, and the actual installed application passed **12/12 runtime tests**. Product/shortcut/cached-bitmap read-back succeeded; interactive revision-2 wizard navigation is still untested. See [revision-2 artwork verification and screenshots](INSTALLER_BRANDING_VERIFICATION.md) and [revision-1 observed installed result](WINDOWS_INSTALLER_WIZARD_FIX.md). Controlled uninstall/repair, clean-machine validation and signing remain open; the [initial candidate report](WINDOWS_INSTALLER_CANDIDATE.md) is historical.
 
 ## Remaining release gates and scope limits
 

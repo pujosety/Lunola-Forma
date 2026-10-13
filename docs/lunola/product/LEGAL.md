@@ -21,10 +21,10 @@ Different files and dependencies can have different applicable licenses. The ups
 
 The checked upstream revision is `de6e3c4fb9183490ccd5235c4fe2e29372d22f97`. Local branding changes are being developed on `brand/lunola-forma`.
 
-No public source-download URL for the modified product has been configured. Do not treat the upstream repository alone as the source handoff for a modified Lunola binary. The release handoff must identify the exact modified source, build scripts, dependencies and source-access instructions before publication.
+The modified source is available in pujosety/Lunola-Forma. [Alpha 1 source handoff](../RELEASE_ALPHA_1.md) identifies the exact executable commit, hydrated release source, dependency archives/recipe hashes, packaging scripts and retained notices; an unmodified upstream URL is not substituted for the modified source.
 
 The current documentation does not describe the covered application as proprietary closed-source software. Source and distribution review remains an explicit release gate in the engineering reports.
 
 ## Brand artwork
 
-The supplied Lunola logo, icon and splash originals remain byte-identical. Their branding approval is recorded separately from code licensing. No asset copyright owner or public redistribution grant has been invented; artwork rights must be recorded before public distribution.
+The supplied Lunola logo, icon and splash originals remain byte-identical. Their branding approval is recorded separately from code licensing. The maintainer confirmed public redistribution permission for these assets on October 13, 2026. No asset copyright owner, broader artwork license or independent trademark clearance is invented.

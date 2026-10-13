@@ -1,0 +1,129 @@
+{
+  "byline": {
+    "anchor": "lt",
+    "bounds": [
+      10,
+      276,
+      82,
+      288
+    ],
+    "color_rgb": [
+      40,
+      40,
+      40
+    ],
+    "text": "by Pujo Setyo",
+    "xy": [
+      10,
+      276
+    ]
+  },
+  "derivatives": {
+    "LunolaBanner.bmp": {
+      "dimensions": [
+        493,
+        58
+      ],
+      "format": "BMP",
+      "mode": "RGB",
+      "sha256": "8b52d9da2433f576db9af886969c484437cc5e0a4aa740e8af2c208220fbbd33"
+    },
+    "LunolaDialog.bmp": {
+      "dimensions": [
+        493,
+        312
+      ],
+      "format": "BMP",
+      "mode": "RGB",
+      "sha256": "a28bd272ffe754d229d7067b07416e59f3a7e739c416c53095b13215a6c85eea"
+    }
+  },
+  "font": {
+    "sha256": "8134dbcd09e7b123c9a7f229d49cffbcb01352cc72ea5e1076b65d0dca9f73cd",
+    "size_px": 12,
+    "source": "C:/Windows/Fonts/segoeui.ttf"
+  },
+  "native_text_zones": {
+    "LunolaBanner.bmp": [
+      0,
+      0,
+      420,
+      58
+    ],
+    "LunolaDialog.bmp": [
+      164,
+      0,
+      493,
+      312
+    ]
+  },
+  "originals": {
+    "lunola-forma-icon.png": {
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "sha256": "e89ba124051b61175a05dfefb0d24f44c0fa6e7dd6eec23dd8dcb005a95bf111"
+    },
+    "lunola-forma-logo.png": {
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "sha256": "9e2c53a548d398c536b929ab4dac0fa38702cf75294a2f1c14c847111e5ccdda"
+    },
+    "lunola-forma-splash-art.png": {
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "sha256": "18decbf5337fe62c178f32f04769fdd0adea4480cb0dcfc2a3c7ac9e29089bdc"
+    }
+  },
+  "placements": {
+    "icon": {
+      "bitmap": "LunolaBanner.bmp",
+      "dimensions": [
+        54,
+        54
+      ],
+      "source": "lunola-forma-icon.png",
+      "xy": [
+        434,
+        2
+      ]
+    },
+    "logo": {
+      "bitmap": "LunolaDialog.bmp",
+      "dimensions": [
+        144,
+        48
+      ],
+      "source": "lunola-forma-logo.png",
+      "xy": [
+        10,
+        30
+      ]
+    },
+    "splash": {
+      "bitmap": "LunolaDialog.bmp",
+      "dimensions": [
+        144,
+        144
+      ],
+      "source": "lunola-forma-splash-art.png",
+      "xy": [
+        10,
+        105
+      ]
+    }
+  },
+  "recipe": {
+    "alpha": "RGBA alpha-composite on opaque white",
+    "resize": "LANCZOS"
+  },
+  "schema_version": 1
+}

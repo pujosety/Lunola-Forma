@@ -10,7 +10,7 @@ Build a world of your own.
 
 Lunola Forma is an independently branded, Blender-based 3D creation application from Lunola. This repository contains the complete application source snapshot and reviewed product-identity changes, not the complete upstream Git history. The Pujo Setyo byline identifies product presentation; it does not replace upstream authorship.
 
-**Development status:** the engine base is **5.4.0 Alpha**, not a stable release. The current identity branch has a locally built and runtime/GUI-verified Windows x64 artifact from `d373d952`. There is currently **no downloadable public release**. See [current verification and remaining gates](docs/lunola/CURRENT_VERIFICATION.md); a tested portable is not a signed installer or clean-machine certification.
+**Development status:** **Lunola Forma 5.4.0 Alpha 1** is an unsigned Windows x64 prerelease, not stable. [Download installer or portable ZIP](https://github.com/pujosety/Lunola-Forma/releases/tag/v5.4.0-alpha.1). The exact tested engine source is `d373d952`; [release/source information](docs/lunola/RELEASE_ALPHA_1.md) and [current verification](docs/lunola/CURRENT_VERIFICATION.md) distinguish executed tests from remaining clean-machine/signing gates.
 
 Official repository: [pujosety/Lunola-Forma](https://github.com/pujosety/Lunola-Forma).
 
@@ -27,11 +27,11 @@ The smoke suite does not certify every feature, third-party add-on or GPU backen
 
 ## Screenshots
 
-Actual [before/after application screenshots and current verification](docs/lunola/CURRENT_VERIFICATION.md) are available on this local identity branch. The wordmark above is an approved asset, not a screenshot. The verified Windows artifact is built from `d373d952`; dark 100% and light 125% application-UI samples are recorded separately from untested native OS DPI and release gates. These screenshots and the identity branch are not published to remote `main` yet.
+Actual [before/after application screenshots and current verification](docs/lunola/CURRENT_VERIFICATION.md) are available on this local identity branch. The wordmark above is an approved asset, not a screenshot. The verified Windows artifact is built from `d373d952`; dark 100% and light 125% application-UI samples are recorded separately from untested native OS DPI and release gates. These application screenshots and identity changes accompany the Alpha 1 source publication.
 
 ## Installation
 
-No public binary package or installer is available yet. A source archive is not an installable application. Check [releases](https://github.com/pujosety/Lunola-Forma/releases) for future packages; until then use the [source repository](https://github.com/pujosety/Lunola-Forma), [changelog](CHANGELOG.md) and source-build instructions below.
+Download **Setup-r2.msi** for current-user installation, or the **Windows-x64.zip** for portable use from [Alpha 1](https://github.com/pujosety/Lunola-Forma/releases/tag/v5.4.0-alpha.1). Both are unsigned development artifacts; back up important projects. Verify SHA256SUMS, retain all runtime/legal files, and read [installation, source and known limits](docs/lunola/RELEASE_ALPHA_1.md). The Source ZIP is source code, not an installable application.
 
 If you already have a verified local Windows portable build, keep its **complete installed folder** together and run `blender.exe` inside it. Python, DLLs, scripts, resources and legal notices are needed; copying only the executable is insufficient. Check `blender.exe --version` and back up important projects before using an alpha build.
 
@@ -77,7 +77,7 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md). Keep changes focused, preserve technica
 
 ## Releases
 
-Public binary releases are **pending**. The [release page](https://github.com/pujosety/Lunola-Forma/releases) is the future distribution location, not evidence that a download exists. Working fallbacks are this [source repository](https://github.com/pujosety/Lunola-Forma) and [CHANGELOG.md](CHANGELOG.md). Local alpha results do not imply signing, an installer, complete GPU coverage or a stable release.
+[Lunola Forma 5.4.0 Alpha 1](https://github.com/pujosety/Lunola-Forma/releases/tag/v5.4.0-alpha.1) provides the tested Windows installer, portable package, hydrated application source, copyleft dependency sources, checksums and provenance. See [release notes](docs/lunola/RELEASE_ALPHA_1.md) and [CHANGELOG.md](CHANGELOG.md). Prerelease status does not imply signing, complete GPU coverage or clean-machine certification.
 
 ## Attribution
 

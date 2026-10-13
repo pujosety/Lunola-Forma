@@ -1,0 +1,226 @@
+{
+  "schema": 1,
+  "phase": "B - preparation only, not integrated",
+  "generator": "generate_assets.py",
+  "pillow": "12.3.0",
+  "resize": "Lanczos; RGBA -> premultiplied RGBa -> resize -> straight RGBA",
+  "originals": [
+    {
+      "path": "originals/lunola-forma-logo.png",
+      "sha256": "9e2c53a548d398c536b929ab4dac0fa38702cf75294a2f1c14c847111e5ccdda",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "originals/lunola-forma-icon.png",
+      "sha256": "e89ba124051b61175a05dfefb0d24f44c0fa6e7dd6eec23dd8dcb005a95bf111",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "originals/lunola-forma-splash-art.png",
+      "sha256": "18decbf5337fe62c178f32f04769fdd0adea4480cb0dcfc2a3c7ac9e29089bdc",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGB"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "derived/about/lunola-forma-logo.png",
+      "sha256": "31d98ea42646dda99af22962b290bf41e5095bc5fda80b21b3ef534cdbb59abc",
+      "bytes": 362983,
+      "dimensions": [
+        1086,
+        362
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "derived/linux/128x128/lunola-forma.png",
+      "sha256": "c54e5b16c8819e2b25608eefa846bbfab4ac69cdd4af4e4e1dda801e88c5f1ac",
+      "bytes": 28712,
+      "dimensions": [
+        128,
+        128
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "derived/linux/16x16/lunola-forma.png",
+      "sha256": "217b58093ee7f969796870d46d5f4fe165dc068deb21a5ca8bc146541b2faa0e",
+      "bytes": 941,
+      "dimensions": [
+        16,
+        16
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "derived/linux/24x24/lunola-forma.png",
+      "sha256": "c8cb424a1e379f189a7be69920236f4cd50d00e784907fbdaa09da6e306a4759",
+      "bytes": 1712,
+      "dimensions": [
+        24,
+        24
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "derived/linux/256x256/lunola-forma.png",
+      "sha256": "a5798eabe07f81ba0d392b9f57744d4db4588af637813bf10269b8a6c5f4a118",
+      "bytes": 90890,
+      "dimensions": [
+        256,
+        256
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "derived/linux/32x32/lunola-forma.png",
+      "sha256": "cd03c22265b982c0ba319813b8626cdac8e6d36f91d807f5379370813e5ec6e0",
+      "bytes": 2909,
+      "dimensions": [
+        32,
+        32
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "derived/linux/48x48/lunola-forma.png",
+      "sha256": "8cdf97b109858cba6275031e4b8cef6942c058fc3e6055f68dbb8b01b5bf87d2",
+      "bytes": 5639,
+      "dimensions": [
+        48,
+        48
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "derived/linux/512x512/lunola-forma.png",
+      "sha256": "45cc48c7383f7565bca408876f40c07f5292b7d0d2fac0f0cceb982c0d94d1c9",
+      "bytes": 296518,
+      "dimensions": [
+        512,
+        512
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "derived/linux/64x64/lunola-forma.png",
+      "sha256": "a73b6ca13efd40fb8c9f296b559df65d7981052fda339321d34deb18bb13fdda",
+      "bytes": 8962,
+      "dimensions": [
+        64,
+        64
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "derived/linux/96x96/lunola-forma.png",
+      "sha256": "939eb719c1ec2b4849f588fc3013d9d4acafe6b8fde32c10a89e45058ad82b51",
+      "bytes": 17726,
+      "dimensions": [
+        96,
+        96
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "path": "derived/splash/lunola-forma-splash.png",
+      "sha256": "a4bfe54f5c650b8dd364d8d546fb44fcf71844ad846d43ad3f20abdba41be8be",
+      "bytes": 568060,
+      "dimensions": [
+        1000,
+        500
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "derived/windows/lunola-forma.ico",
+      "sha256": "8666cb94b55c0c89e0928403a24944184db40639657c0045b0e59aabf5c0432a",
+      "bytes": 157625,
+      "format": "ICO",
+      "frame_sizes": [
+        16,
+        24,
+        32,
+        48,
+        64,
+        96,
+        128,
+        256
+      ],
+      "encoding": "PNG/RGBA",
+      "bit_depth": 32
+    },
+    {
+      "path": "previews/light-dark.png",
+      "sha256": "14b9117ec55d510155d410383a391c42c7622d48824e05c37908de39fb47d7db",
+      "bytes": 429070,
+      "dimensions": [
+        1200,
+        1060
+      ],
+      "mode": "RGB"
+    }
+  ],
+  "splash": {
+    "dimensions": [
+      1000,
+      500
+    ],
+    "left_panel": [
+      0,
+      0,
+      500,
+      500
+    ],
+    "panel_rgb": [
+      247,
+      245,
+      241
+    ],
+    "art_rect": [
+      500,
+      0,
+      1000,
+      500
+    ],
+    "logo_rect": [
+      40,
+      125,
+      460,
+      265
+    ],
+    "tagline": "Professional 3D Creation Suite",
+    "tagline_origin": [
+      40,
+      294
+    ],
+    "tagline_size": 23,
+    "attribution": "Based on Blender",
+    "attribution_origin": [
+      40,
+      407
+    ],
+    "attribution_size": 18,
+    "text_rgb": [
+      39,
+      43,
+      54
+    ],
+    "font": "Pillow packaged default scalable font",
+    "version_baked": false,
+    "runtime_overlay": "Deferred to integration; upstream runtime supplies actual version"
+  },
+  "rights": "Brand asset rights unspecified; no license grant inferred. Preserve upstream notices during later integration."
+}

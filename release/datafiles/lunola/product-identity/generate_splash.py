@@ -1,0 +1,83 @@
+"""Reproducible product-only byline derivative; never rewrites Phase B or originals.
+
+Requires Pillow==12.3.0. Embedding is a separate, explicitly scoped copy operation.
+"""
+from __future__ import annotations
+
+import hashlib
+import json
+from pathlib import Path
+
+import PIL
+from PIL import Image, ImageDraw, ImageFont
+
+ROOT = Path(__file__).resolve().parent
+PHASE_B = ROOT.parent / 'derived/splash/lunola-forma-splash.png'
+PHASE_B_HASH = 'a4bfe54f5c650b8dd364d8d546fb44fcf71844ad846d43ad3f20abdba41be8be'
+APPROVED = {
+    'lunola-forma-logo.png': '9e2c53a548d398c536b929ab4dac0fa38702cf75294a2f1c14c847111e5ccdda',
+    'lunola-forma-icon.png': 'e89ba124051b61175a05dfefb0d24f44c0fa6e7dd6eec23dd8dcb005a95bf111',
+    'lunola-forma-splash-art.png': '18decbf5337fe62c178f32f04769fdd0adea4480cb0dcfc2a3c7ac9e29089bdc',
+}
+PILLOW_VERSION = '12.3.0'
+BYLINE = 'by Pujo Setyo'
+EDIT_RECT = (40, 407, 240, 435)
+
+
+def generate(output: Path = ROOT, *, source: Path = PHASE_B) -> dict:
+    """Verify immutable inputs first, then write only the new variant directory."""
+    output = Path(output).resolve()
+    if output != ROOT and ROOT not in output.parents:
+        raise ValueError('Output must stay within product-identity')
+    if PIL.__version__ != PILLOW_VERSION:
+        raise RuntimeError(f'Requires Pillow=={PILLOW_VERSION}, got {PIL.__version__}')
+    inputs = [(Path(source), PHASE_B_HASH)] + [
+        (ROOT.parent / 'originals' / name, digest) for name, digest in APPROVED.items()
+    ]
+    for path, digest in inputs:
+        if hashlib.sha256(path.read_bytes()).hexdigest() != digest:
+            raise ValueError(f'Input hash mismatch: {path}')
+    with Image.open(source) as image:
+        image.load()
+        if image.format != 'PNG' or image.mode != 'RGB' or image.size != (1000, 500):
+            raise ValueError('Phase B splash must be 1000x500 RGB PNG')
+        image = image.copy()
+    # Exclusive right/bottom bounds: overwrite only the old text's panel area.
+    image.paste((247, 245, 241), EDIT_RECT)
+    ImageDraw.Draw(image).text((40, 407), BYLINE,
+                              font=ImageFont.load_default(size=18), fill=(39, 43, 54))
+    output.mkdir(parents=True, exist_ok=True)
+    target = output / 'lunola-forma-splash.png'
+    image.save(target, format='PNG', optimize=False, compress_level=9)
+    manifest = {
+        'schema': 1,
+        'variant': 'Lunola Forma product identity by Pujo Setyo',
+        'generator': 'generate_splash.py',
+        'pillow': PILLOW_VERSION,
+        'inputs': [
+            {'path': '../derived/splash/lunola-forma-splash.png', 'sha256': PHASE_B_HASH},
+            *[{'path': '../originals/' + name, 'sha256': digest} for name, digest in APPROVED.items()],
+        ],
+        'outputs': [{'path': target.name, 'sha256': hashlib.sha256(target.read_bytes()).hexdigest(),
+                     'bytes': target.stat().st_size, 'dimensions': [1000, 500], 'mode': 'RGB'}],
+        'recipe': {
+            'base': 'Verified immutable Phase B composite; no artwork resampling in this variant',
+            'edit_rect': list(EDIT_RECT), 'panel_rgb': [247, 245, 241],
+            'byline': BYLINE, 'byline_origin': [40, 407], 'byline_size': 18,
+            'text_rgb': [39, 43, 54], 'font': 'Pillow packaged default scalable font',
+            'logo_rect_unchanged': [40, 125, 460, 265], 'art_rect_unchanged': [500, 0, 1000, 500],
+            'tagline_unchanged': 'Professional 3D Creation Suite',
+            'version_baked': False, 'runtime_overlay': 'Actual upstream version supplied unchanged by application',
+        },
+        'embedding_target': 'release/datafiles/splash.png (explicit separate byte copy)',
+        'legal': 'Product byline does not replace code authorship. Preserve GPL, upstream copyright, '
+                 'third-party notices and corresponding modified-source distribution obligations. '
+                 'Brand artwork rights are not inferred from code licensing.',
+    }
+    (output / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8')
+    return manifest
+
+
+if __name__ == '__main__':
+    result = generate()
+    print(json.dumps(result['outputs'][0], indent=2))

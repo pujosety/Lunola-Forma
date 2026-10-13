@@ -10,7 +10,7 @@ Build a world of your own.
 
 Lunola Forma is an independently branded, Blender-based 3D creation application from Lunola. This repository contains the complete application source snapshot and reviewed product-identity changes, not the complete upstream Git history. The Pujo Setyo byline identifies product presentation; it does not replace upstream authorship.
 
-**Development status:** the engine base is **5.4.0 Alpha**, not a stable release. A Windows x64 alpha was built and runtime-tested locally before publication. There is currently **no downloadable public release**. Historical results do not certify a fresh build of this branch or this documentation update.
+**Development status:** the engine base is **5.4.0 Alpha**, not a stable release. The current identity branch has a locally built and runtime/GUI-verified Windows x64 artifact from `d373d952`. There is currently **no downloadable public release**. See [current verification and remaining gates](docs/lunola/CURRENT_VERIFICATION.md); a tested portable is not a signed installer or clean-machine certification.
 
 Official repository: [pujosety/Lunola-Forma](https://github.com/pujosety/Lunola-Forma).
 
@@ -27,7 +27,7 @@ The smoke suite does not certify every feature, third-party add-on or GPU backen
 
 ## Screenshots
 
-Public application screenshots are pending. The wordmark above is an existing approved asset, **not a screenshot or proof of runtime integration**. [Asset previews](release/datafiles/lunola/README.md) describe artwork only. Local GUI observations are recorded in the [test report](docs/lunola/TEST_RESULTS.md); no fabricated screenshots are included here.
+Actual [before/after application screenshots and current verification](docs/lunola/CURRENT_VERIFICATION.md) are available on this local identity branch. The wordmark above is an approved asset, not a screenshot. The verified Windows artifact is built from `d373d952`; dark 100% and light 125% application-UI samples are recorded separately from untested native OS DPI and release gates. These screenshots and the identity branch are not published to remote `main` yet.
 
 ## Installation
 

@@ -1,5 +1,7 @@
 # Known issues and release gates
 
+**Latest identity build:** see [current executed verification](CURRENT_VERIFICATION.md) for source commit `d373d952`, rebuilt runtime, readable labels and actual GUI screenshots. Older sections below are historical milestones; they do not supersede the current report.
+
 ## Current limitations
 
 - Baseline build and 12 background smoke tests completed successfully. GUI starts, with upstream Vulkan warning and automatic OpenGL fallback. No supported Vulkan device detected; do not change rendering architecture to hide this pre-branding hardware/driver limitation. Full splash/About interaction still needs authorized GUI input.

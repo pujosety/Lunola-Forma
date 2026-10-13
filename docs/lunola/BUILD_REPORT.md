@@ -1,5 +1,7 @@
 # Windows build report
 
+**Latest identity build:** see [current executed verification](CURRENT_VERIFICATION.md) for source commit `d373d952`, rebuilt runtime, readable labels and actual GUI screenshots. Older sections below are historical milestones; they do not supersede the current report.
+
 ## Final byline revision — BUILT AND RUNTIME VERIFIED
 
 Pipeline: `audit/product-identity/build_and_verify.py`; target `D:/Lunola/Forma/Lunola-Forma-by-Pujo-Setyo`. Reuses the existing native build cache and preserves the prior portable. Checks exact embedded byline PNG, installed About/splash script, rendered readme template, native PE icon payloads, real header image data and 12 runtime cases. No result is marked PASS until executed. Visual About sizing remains a separate pending gate.

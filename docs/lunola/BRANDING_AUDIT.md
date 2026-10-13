@@ -10,7 +10,7 @@ Taxonomy: **A** user-facing branding, **B** product navigation, **C** applicatio
 
 The exact original string, path, audited line, category and replacement for every native display change are recorded in [the native manifest](../../tools/lunola/qa/native_identity_manifest.json). The manifest also records separate Windows crash-routing edits and CLI/resource-symbol preservation exceptions. The native preservation test compares the complete modified file with the base blob after only those explicit transformations.
 
-Current validation: native display/preservation contracts PASS; empty crash-issue routing contract PASS. A native C++ build and affected GUI paths remain pending integration.
+Current validation: source/preservation, native build/install and 12 runtime smoke cases PASS for `d373d952`. Actual startup, Help, dark About at UI scale 1.0 and light About at 1.25 were captured and inspected. Native crash recovery was not deliberately induced; installer/signing, clean-machine and OS-level DPI gates remain. See [current verification](CURRENT_VERIFICATION.md).
 
 ## Product navigation and About
 

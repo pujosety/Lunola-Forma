@@ -1,5 +1,7 @@
 # Test results
 
+**Latest identity build:** see [current executed verification](CURRENT_VERIFICATION.md) for source commit `d373d952`, rebuilt runtime, readable labels and actual GUI screenshots. Older sections below are historical milestones; they do not supersede the current report.
+
 ## Final byline revision — executed results
 
 The final installed Windows byline build completed compilation/install, version execution, embedded byline asset verification, native PE icon verification, installed header data verification and all 12 runtime smoke cases. The repository harness independently repeated all 12 cases from the publication workspace: API, transform, material, modifier, Geometry Nodes, animation, add-on, OBJ export, save/reopen, Eevee and Cycles CPU. Launcher contracts: 2 PASS; all 3 QA scripts parse.
